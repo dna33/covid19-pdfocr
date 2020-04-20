@@ -126,20 +126,6 @@ def getJobResults(jobId):
         if ('NextToken' in response):
             nextToken = response['NextToken']
 
-        print('pages is type: ' + str(type(pages)))
-        # for page in pages:
-        #     print(type(page))
-        #     #pprint(page)
-        #     blocks = page['Blocks']
-        #     print('blocks are:')
-        #     print(type(blocks))
-        #     blocks_map = {}
-        #     table_blocks = []
-        #     for block in blocks:
-        #         blocks_map[block['Id']] = block
-        #         if block['BlockType'] == "TABLE":
-        #            print(block)
-
     return pages
 
 def get_table_csv_results(pages):
@@ -149,7 +135,6 @@ def get_table_csv_results(pages):
     blocks_list = []
     for page in pages:
         blocks_list.append(page['Blocks'])
-        print(type(blocks_list))
 
     for blocks in blocks_list:
 
@@ -203,6 +188,7 @@ def get_rows_columns_map(table_result, blocks_map):
                     rows[row_index][col_index] = get_text(cell, blocks_map)
     return rows
 
+
 def get_text(result, blocks_map):
     text = ''
     if 'Relationships' in result:
@@ -240,4 +226,5 @@ if __name__ == "__main__":
     if (isJobComplete(jobId)):
         response = getJobResults(jobId)
         result = get_table_csv_results(response)
+        print(type(result))
         print(result)
