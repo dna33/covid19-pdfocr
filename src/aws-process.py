@@ -3,6 +3,7 @@ import boto3
 import glob
 from botocore.exceptions import ClientError
 from pprint import pprint
+import pandas as pd
 
 #PDF are processed asynchronously: files must be on S3
 
@@ -172,6 +173,38 @@ def generate_table_csv(table_result, blocks_map, table_index):
     return csv
 
 
+def get_table_pd_results(pages):
+    # Get the text blocks
+    blocks_map = {}
+    table_blocks = []
+    blocks_list = []
+    for page in pages:
+        blocks_list.append(page['Blocks'])
+
+    for blocks in blocks_list:
+
+        for block in blocks:
+            blocks_map[block['Id']] = block
+            if (block['BlockType']) == "TABLE":
+                table_blocks.append(block)
+
+        if len(table_blocks) <= 0:
+            return "<b> NO Table FOUND </b>"
+
+    tables = []
+    for index, table in enumerate(table_blocks):
+        tables.append(generate_table_pd(table, blocks_map, index + 1))
+    return tables
+
+
+def generate_table_pd(table_result, blocks_map, table_index):
+    all_rows = {}
+    rows = get_rows_columns_map(table_result, blocks_map)
+    table_id = 'Table_' + str(table_index)
+    all_rows[table_id] = rows
+    return all_rows
+
+
 def get_rows_columns_map(table_result, blocks_map):
     rows = {}
     for relationship in table_result['Relationships']:
@@ -225,6 +258,7 @@ if __name__ == "__main__":
     print("Started job with id: {}".format(jobId))
     if (isJobComplete(jobId)):
         response = getJobResults(jobId)
-        result = get_table_csv_results(response)
+        #result = get_table_csv_results(response)
+        result = get_table_pd_results(response)
         print(type(result))
         print(result)
