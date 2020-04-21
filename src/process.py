@@ -13,8 +13,8 @@ if __name__ == '__main__':
             result = get_table_pd_results(response)
             a = pandizer(result)
             #print(a)
-            tableIdentifier(a)
-
+            aux = tableIdentifier(a)
+            #print(aux)
 
     else:
 
