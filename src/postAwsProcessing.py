@@ -6,7 +6,9 @@ TABLAS_REPORTE_DIARIO = {1: 'CasosConfirmadosNivelNacional', 2: 'ExamenesRealiza
 
 
 def regionName(df):
-    df["Region"] = df["Region"].replace({"Tarapaca": "Tarapacá", "Valparaiso": "Valparaíso",
+    if 'Region' in df.columns:
+        print('Normalizando regiones')
+        df["Region"] = df["Region"].replace({"Tarapaca": "Tarapacá", "Valparaiso": "Valparaíso",
                                          "Del Libertador General Bernardo O’Higgins": "O’Higgins",
                                          "Ohiggins": "O’Higgins", "Nuble": "Ñuble",
                                          "Biobio": "Biobío", "La Araucania": "Araucanía", "Los Rios": "Los Ríos",
@@ -25,43 +27,57 @@ def pandizer(tables):
     for i in range(lenTables):
         table_key = 'Table_' + str(i + 1)
         each_table = tables[i]
-        #print(each_table)
         pd_table = pd.DataFrame(each_table[table_key])
-        #print(pd_table)
-        #aux = (pd_table.columns.str.replace(" ", ""))
-        df_list.append(pd_table.T)
+        #Remove empty spaces from headers
+        aux = pd_table.transpose()
+        aux.columns = aux.iloc[0]
+        aux.drop(aux.index[0], inplace=True)
+        aux.columns = aux.columns.str.replace(' ', '')
+        df_list.append(aux)
     return df_list
-
 
 
 def tableIdentifier(tables):
     """
     tableIdentifier identifica las tablas que salen de textract en fucion de sus encabezados.
 
-    :param tables: pandas dataframe
+    :param tables: list of pandas dataframe
     :return:
     """
     # la unica forma confiable de identificar las tablas es en base a sus columnas.
-    # asumo que textract ide
+    # asumo que textract funciona
+
+    # REPORTE DIARIO
+    headerCasosConfirmadosNivelNacional = ['Casosnuevos', 'CasosTotales', '%Total', 'Fallecidos']
+    headerExámenesRealizadosNivelNacional = ['#examenesrealizados', '%total', '#examenesinformadosultimas24hrs']
+    headerHospotalizacionUCIRegion = ['Region', '#pacientes', '%total']
+    headerHospotalizacionUCIEtario = ['Tramosdeedad', '#pacientes', '%total']
+
     lenTables = len(tables)
     print(' Got ' + str(lenTables) + ' tables to identify')
-    for i in range(lenTables):
-        table_key = 'Table_' + str(i+1)
-        each_table = tables[i]
-        #print(each_table)
-        #print(each_table[table_key])
-        nombres_columnas = each_table[table_key][1]
-        #print(nombres_columnas)
-        print(nombres_columnas.values())
+    for table in tables:
+        #drop empties:
+        aux = [x for x in table.columns.tolist() if x]
+        print(aux)
+        # Normalizamos regiones
+        regionName(table)
+        # REPORTE DIARIO
+        if set(aux).issubset(set(headerCasosConfirmadosNivelNacional)):
+            print('tabla es CasosConfirmadosNivelNacional')
+            print(table)
+        elif set(aux).issubset(set(headerExámenesRealizadosNivelNacional)):
+            print('tabla es ExámenesRealizadosNivelNacional')
+            print(table)
+        elif set(aux).issubset(set(headerHospotalizacionUCIRegion)):
+            print('tabla es HospotalizacionUCIRegion')
+            print(table)
+        elif set(aux).issubset(set(headerHospotalizacionUCIEtario)):
+            print('tabla es HospotalizacionUCIEtario')
+            print(table)
+        else:
+            print('No podemos identificar la tabla:')
+            print(table)
+            raise Exception('No pudimos identificar la tabla')
 
-        if 'Casosnuevos' in nombres_columnas.values(): #and\
-            #'Casos Totales 'in nombres_columnas.values() and\
-            #'% Total 'in nombres_columnas.values() and\
-            #'Fallecidos ' in nombres_columnas.values():
-            print(each_table + ' es de tipo ' + TABLAS_REPORTE_DIARIO[1])
-        elif '# examenes realizados 'in nombres_columnas.values() and\
-            '% total 'in nombres_columnas.values() and\
-             '# examenes informados ultimas 24 hrs' in nombres_columnas.values():
-            print(each_table + ' es de tipo ' + TABLAS_REPORTE_DIARIO[2])
 
 

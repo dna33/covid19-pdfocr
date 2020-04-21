@@ -12,8 +12,8 @@ if __name__ == '__main__':
             # result = get_table_csv_results(response)
             result = get_table_pd_results(response)
             a = pandizer(result)
-            for element in a:
-                print(element)
+            #print(a)
+            tableIdentifier(a)
 
 
     else:
