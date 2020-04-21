@@ -242,13 +242,16 @@ if __name__ == "__main__":
     myS3 = 'do-covid19'
     informePath = '../raw/InformeEpidemiologico/*.pdf'
     reportePath = '../raw/ReporteDiario/*.pdf'
+    situacionPath = '../raw/InformeSituacionCOVID19/*.pdf'
     inf = preparePathsForUpload(informePath)
     for eachinf in inf:
         upload_file(eachinf[0], 'do-covid19', eachinf[1])
     rep = preparePathsForUpload(reportePath)
     for eachrep in rep:
         upload_file(eachrep[0], 'do-covid19', eachrep[1])
-
+    sit = preparePathsForUpload(situacionPath)
+    for eachsit in sit:
+        upload_file(eachsit[0], 'do-covid19', eachsit[1])
 
     # Document
     documentName = rep[0][1]
@@ -261,4 +264,4 @@ if __name__ == "__main__":
         #result = get_table_csv_results(response)
         result = get_table_pd_results(response)
         print(type(result))
-        print(result)
+        #print(result)
