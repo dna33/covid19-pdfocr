@@ -17,13 +17,14 @@ def regionName(df):
                                             "Biobio": "Biobío", "La Araucania": "Araucanía", "Araucania": "Araucanía",
                                             "Los Rios": "Los Ríos", "De los Rios": "Los Ríos",
                                             "De los Lagos": "Los Lagos",
-                                            "Aysen": "Aysén", "Magallanes y la Antartica": "Magallanes"
-                                            })
+                                            "Aysen": "Aysén", "Magallanes y la Antartica": "Magallanes",
+                                            "": "Total"})
 
         codigoRegion = {'Tarapacá': '01', 'Antofagasta': '02', 'Atacama': '03', 'Coquimbo': '04', 'Valparaíso': '05',
                         'O’Higgins': '06', 'Maule': '07', 'Biobío': '08', 'Araucanía': '09', 'Los Lagos': '10',
                         'Aysén': '11', 'Magallanes': '12', 'Metropolitana': '13', 'Los Ríos': '14',
                         'Arica y Parinacota': '15', 'Ñuble': '16'}
+
 
 
         for region in df['Region']:
@@ -36,11 +37,7 @@ def regionName(df):
                 df.loc[loc, 'Codigoregion'] = ''
                 print(region + ' no es region')
 
-        #codigoregion quedo al final. Idealmente deberia estar junto a region
-        # cols_at_beggining = ['Region', 'Codigoregion']
-        # aux = df[[c for c in df if c in cols_at_beggining] + [c for c in df if c not in cols_at_beggining]]
-        # print(aux)
-        # return aux
+        # codigoregion quedo al final. Idealmente deberia estar junto a region
         codRegAux = df['Codigoregion']
         df.drop(labels=['Codigoregion'], axis=1, inplace=True)
         df.insert(1, 'Codigoregion', codRegAux)
@@ -82,6 +79,41 @@ def pandizer(tables):
         df_list.append(aux)
     return df_list
 
+def checkReporteDiario(tables):
+    print(' Got ' + str(len(tables)) + ' tables to check for in reporte diario')
+    reporteDiario = {}
+    for table in tables:
+        #drop empties:
+        aux = [x for x in table.columns.tolist() if x]
+
+        # REPORTE DIARIO nombres sin espacios por que no hay consistencia
+
+        headerCasosConfirmadosNivelNacional = ['Casosnuevos', 'CasosTotales', '%Total', 'Fallecidos']
+        headerExámenesRealizadosNivelNacional = ['#examenesrealizados', '%total', '#examenesinformadosultimas24hrs']
+        headerHospotalizacionUCIRegion = ['Region', '#pacientes', '%total']
+        headerHospotalizacionUCIEtario = ['Tramosdeedad', '#pacientes', '%total']
+        if set(aux).issubset(set(headerCasosConfirmadosNivelNacional)):
+            # primeros reportes no dicen region en el encabezado
+            table.rename(columns={"": "Region"}, inplace=True)
+            regionName(table)
+            print('tabla es CasosConfirmadosNivelNacional')
+            reporteDiario['CasosConfirmadosNivelNacional'] = table
+        elif set(aux).issubset(set(headerExámenesRealizadosNivelNacional)):
+            table.rename(columns={"": "Institucion"}, inplace=True)
+            table["Institucion"] = table["Institucion"].replace({"" : "Total"})
+            print('tabla es ExámenesRealizadosNivelNacional')
+            reporteDiario['ExámenesRealizadosNivelNacional'] = table
+        elif set(aux).issubset(set(headerHospotalizacionUCIRegion)):
+            regionName(table)
+            print('tabla es HospitalizacionUCIRegion')
+            reporteDiario['HospitalizacionUCIRegion'] = table
+        elif set(aux).issubset(set(headerHospotalizacionUCIEtario)):
+            print('tabla es HospitalizacionUCIEtario')
+            reporteDiario['HospitalizacionUCIEtario'] = table
+        else:
+            print('No podemos identificar la tabla:')
+            raise Exception('No pudimos identificar la tabla')
+    return reporteDiario
 
 def tableIdentifier(tables):
     """
@@ -93,40 +125,24 @@ def tableIdentifier(tables):
     # la unica forma confiable de identificar las tablas es en base a sus columnas.
     # asumo que textract funciona
 
-    # REPORTE DIARIO
-    headerCasosConfirmadosNivelNacional = ['Casosnuevos', 'CasosTotales', '%Total', 'Fallecidos']
-    headerExámenesRealizadosNivelNacional = ['#examenesrealizados', '%total', '#examenesinformadosultimas24hrs']
-    headerHospotalizacionUCIRegion = ['Region', '#pacientes', '%total']
-    headerHospotalizacionUCIEtario = ['Tramosdeedad', '#pacientes', '%total']
 
     lenTables = len(tables)
     print(' Got ' + str(lenTables) + ' tables to identify')
-    for table in tables:
-        #drop empties:
-        aux = [x for x in table.columns.tolist() if x]
-        print(aux)
 
-        # REPORTE DIARIO
-        if set(aux).issubset(set(headerCasosConfirmadosNivelNacional)):
-            # primeros reportes no dicen region en el encabezado
-            table.rename(columns={"": "Region"}, inplace=True)
-            regionName(table)
-            print('tabla es CasosConfirmadosNivelNacional')
-            print(table)
-        elif set(aux).issubset(set(headerExámenesRealizadosNivelNacional)):
-            regionName(table)
-            print('tabla es ExámenesRealizadosNivelNacional')
-            print(table)
-        elif set(aux).issubset(set(headerHospotalizacionUCIRegion)):
-            print('tabla es HospotalizacionUCIRegion')
-            print(table)
-        elif set(aux).issubset(set(headerHospotalizacionUCIEtario)):
-            print('tabla es HospotalizacionUCIEtario')
-            print(table)
-        else:
-            print('No podemos identificar la tabla:')
-            print(table)
-            raise Exception('No pudimos identificar la tabla')
+    repDiario = checkReporteDiario(tables)
+    print(repDiario)
+
+    if repDiario:
+        return repDiario
+
+def dump2csv(dict, source, output):
+    print(source + ' had ' + str(len(dict)) + ' tables')
+    for k in dict.keys():
+        print(k)
+        print(dict[k])
+        filename = output + source + '_' + str(k) + '.csv'
+        dict[k].to_csv(filename, index=False)
+
 
 
 

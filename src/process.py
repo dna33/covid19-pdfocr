@@ -5,17 +5,34 @@ from postAwsProcessing import *
 if __name__ == '__main__':
     test = True
     if test:
-        jobId = 'bb6fc8ce8e8a1269da1f77f3adc9967eff3ea878025bbff6b2f9cac6b8ecbb87'
-        print("Started job with id: {}".format(jobId))
-        if (isJobComplete(jobId)):
-            response = getJobResults(jobId)
-            # result = get_table_csv_results(response)
-            result = get_table_pd_results(response)
-            a = pandizer(result)
-            #print(a)
-            aux = tableIdentifier(a)
-            #print(aux)
+        # jobId = 'bb6fc8ce8e8a1269da1f77f3adc9967eff3ea878025bbff6b2f9cac6b8ecbb87'
+        # print("Started job with id: {}".format(jobId))
+        # if (isJobComplete(jobId)):
+        #     response = getJobResults(jobId)
+        #     # result = get_table_csv_results(response)
+        #     result = get_table_pd_results(response)
+        #     a = pandizer(result)
+        #     #print(a)
+        #     aux = tableIdentifier(a)
+        #     print(aux)
+        #     dump2csv(aux, 'lala', '../output/ReporteDiario/')
 
+        obtenerReporteDiario('https://www.gob.cl/coronavirus/cifrasoficiales/', '../raw/ReporteDiario/')
+        myS3 = 'do-covid19'
+        reportePath = '../raw/ReporteDiario/*.pdf'
+
+        rep = preparePathsForUpload(reportePath)
+        for eachrep in rep:
+            sourceFile = eachrep[1].split('/')[1].replace('pdf', '')
+            print('processing ' + sourceFile)
+            upload_file(eachrep[0], 'do-covid19', eachrep[1])
+            jobId = startJob(myS3, eachrep[1])
+            if (isJobComplete(jobId)):
+                response = getJobResults(jobId)
+                result = get_table_pd_results(response)
+                a = pandizer(result)
+                aux = tableIdentifier(a)
+                dump2csv(aux, sourceFile, '../output/ReporteDiario/')
     else:
 
         # Bajamos pdfs
