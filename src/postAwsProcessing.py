@@ -1,4 +1,5 @@
 import pandas as pd
+from pathlib import Path
 
 TABLAS_REPORTE_DIARIO = {1: 'CasosConfirmadosNivelNacional', 2: 'ExamenesRealizadosNivelNacional',
                          3: 'HospitalizacionUCIRegion', 4: 'HospitalizacionUciEtario'}
@@ -9,14 +10,15 @@ def regionName(df):
     if 'Region' in df.columns:
         print('Normalizando regiones')
         df['Region'] = df['Region'].str.strip()
-        df["Region"] = df["Region"].replace({"Arica - Parinacota": "Arica y Parinacota", "Tarapaca": "Tarapacá",
+        df["Region"] = df["Region"].replace({"Arica - Parinacota": "Arica y Parinacota", "Arica": "Arica y Parinacota",
+                                             "Tarapaca": "Tarapacá",
                                             "Valparaiso": "Valparaíso", "Santiago": "Metropolitana",
                                             "Del Libertador General Bernardo O’Higgins": "O’Higgins",
                                             "Ohiggins": "O’Higgins", "Libertador Bernardo O'Higgins" : "O’Higgins",
                                             "Nuble": "Ñuble",
                                             "Biobio": "Biobío", "La Araucania": "Araucanía", "Araucania": "Araucanía",
-                                            "Los Rios": "Los Ríos", "De los Rios": "Los Ríos",
-                                            "De los Lagos": "Los Lagos",
+                                            "Los Rios": "Los Ríos", "De los Rios": "Los Ríos", "LOs Rios" : "Los Ríos",
+                                            "De los Lagos": "Los Lagos", "LOs Lagos": "Los Lagos",
                                             "Aysen": "Aysén", "Magallanes y la Antartica": "Magallanes",
                                             "": "Total"})
 
@@ -88,7 +90,7 @@ def checkReporteDiario(tables):
 
         # REPORTE DIARIO nombres sin espacios por que no hay consistencia
 
-        headerCasosConfirmadosNivelNacional = ['Casosnuevos', 'CasosTotales', '%Total', 'Fallecidos']
+        headerCasosConfirmadosNivelNacional = ['Casosnuevos', 'CasosTotales', '%Total', '%Tota', 'Fallecidos']
         headerExámenesRealizadosNivelNacional = ['#examenesrealizados', '%total', '#examenesinformadosultimas24hrs']
         headerHospotalizacionUCIRegion = ['Region', '#pacientes', '%total']
         headerHospotalizacionUCIEtario = ['Tramosdeedad', '#pacientes', '%total']
@@ -112,7 +114,12 @@ def checkReporteDiario(tables):
             reporteDiario['HospitalizacionUCIEtario'] = table
         else:
             print('No podemos identificar la tabla:')
-            raise Exception('No pudimos identificar la tabla')
+            print(table)
+            # el grafico del 8 de abril lo identificamos como tabla
+            if table.item(['22.03Lun']):
+                print('known problem on 08.04.2020_Reporte_Covid19')
+            else:
+                raise Exception('No pudimos identificar la tabla')
     return reporteDiario
 
 def tableIdentifier(tables):
@@ -130,7 +137,6 @@ def tableIdentifier(tables):
     print(' Got ' + str(lenTables) + ' tables to identify')
 
     repDiario = checkReporteDiario(tables)
-    print(repDiario)
 
     if repDiario:
         return repDiario
@@ -142,6 +148,7 @@ def dump2csv(dict, source, output):
         print(dict[k])
         filename = output + source + '_' + str(k) + '.csv'
         dict[k].to_csv(filename, index=False)
+
 
 
 
