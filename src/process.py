@@ -60,7 +60,7 @@ if __name__ == '__main__':
                 upload_file(eachsit[0], 'do-covid19', eachsit[1])
                 jobId = startJob(myS3, eachsit[1])
                 myfile = open("jobs.log", 'a+')
-                myfile.write(eachrep[1] + ': ' + jobId + '\n')
+                myfile.write(eachsit[1] + ': ' + jobId + '\n')
                 myfile.close()
                 if (isJobComplete(jobId)):
                     response = getJobResults(jobId)
@@ -81,10 +81,10 @@ if __name__ == '__main__':
                 print(sourceFile + ' was already processed')
             else:
                 print('processing ' + sourceFile)
-                upload_file(eachsit[0], 'do-covid19', eachinf[1])
+                upload_file(eachinf[0], 'do-covid19', eachinf[1])
                 jobId = startJob(myS3, eachinf[1])
                 myfile = open("jobs.log", 'a+')
-                myfile.write(eachrep[1] + ': ' + jobId + '\n')
+                myfile.write(eachinf[1] + ': ' + jobId + '\n')
                 myfile.close()
                 if (isJobComplete(jobId)):
                     response = getJobResults(jobId)
