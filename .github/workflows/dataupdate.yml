@@ -38,9 +38,10 @@ jobs:
 
     - uses: peter-evans/create-pull-request@v2
       with:
-        commit_message: "Added data to repo"
-        title: "Got new pdf files"
+        commit_message: "Added new pdfs and csvs"
+        title: "Got new pdf files, please check all is good"
         branch-suffix: timestamp
         committer: seba github bot <actions@github.com>
+        reviewers: pdaire, fzmolina, raliaga, dna33, scornejo
 
 
