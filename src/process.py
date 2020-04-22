@@ -46,48 +46,48 @@ if __name__ == '__main__':
                     dumpDict2csv(a, sourceFile,'../output/raw/ReporteDiario/')
 
         # INFORME SITUACION
-            obtenerSituacionCOVID19('http://epi.minsal.cl/informes-covid-19/', '../input/InformeSituacionCOVID19/')
-            situacionPath = '../input/InformeSituacionCOVID19/*.pdf'
-            sit = preparePathsForUpload(situacionPath)
-            outputFiles = listdir('../output/raw/InformeSituacionCOVID19')
-            for eachsit in sit:
-                sourceFile = eachsit[1].split('/')[1].replace('.pdf', '')
+        obtenerSituacionCOVID19('http://epi.minsal.cl/informes-covid-19/', '../input/InformeSituacionCOVID19/')
+        situacionPath = '../input/InformeSituacionCOVID19/*.pdf'
+        sit = preparePathsForUpload(situacionPath)
+        outputFiles = listdir('../output/raw/InformeSituacionCOVID19')
+        for eachsit in sit:
+            sourceFile = eachsit[1].split('/')[1].replace('.pdf', '')
 
-                if [x for x in outputFiles if sourceFile in x]:
-                    print(sourceFile + ' was already processed')
-                else:
-                    print('processing ' + sourceFile)
-                    upload_file(eachsit[0], 'do-covid19', eachsit[1])
-                    jobId = startJob(myS3, eachsit[1])
-                    myfile = open("jobs.log", 'a+')
-                    myfile.write(eachrep[1] + ': ' + jobId + '\n')
-                    myfile.close()
-                    if (isJobComplete(jobId)):
-                        response = getJobResults(jobId)
-                        result = get_table_pd_results(response)
-                        a = pandizer(result)
-                        dumpDict2csv(a, sourceFile, '../output/raw/InformeSituacionCOVID19/')
+            if [x for x in outputFiles if sourceFile in x]:
+                print(sourceFile + ' was already processed')
+            else:
+                print('processing ' + sourceFile)
+                upload_file(eachsit[0], 'do-covid19', eachsit[1])
+                jobId = startJob(myS3, eachsit[1])
+                myfile = open("jobs.log", 'a+')
+                myfile.write(eachrep[1] + ': ' + jobId + '\n')
+                myfile.close()
+                if (isJobComplete(jobId)):
+                    response = getJobResults(jobId)
+                    result = get_table_pd_results(response)
+                    a = pandizer(result)
+                    dumpDict2csv(a, sourceFile, '../output/raw/InformeSituacionCOVID19/')
 
-                    # INFORME EPIDEMIOLOGICO
-                    obtenerInformeEpidemiologico('https://www.gob.cl/coronavirus/cifrasoficiales/',
-                                                 '../input/InformeEpidemiologico/')
-                    infPath = '../input/InformeEpidemiologico/*.pdf'
-                    inf = preparePathsForUpload(infPath)
-                    outputFiles = listdir('../output/raw/InformeEpidemiologico')
-                    for eachinf in inf:
-                        sourceFile = eachinf[1].split('/')[1].replace('.pdf', '')
+        # INFORME EPIDEMIOLOGICO
+        obtenerInformeEpidemiologico('https://www.gob.cl/coronavirus/cifrasoficiales/',
+                                     '../input/InformeEpidemiologico/')
+        infPath = '../input/InformeEpidemiologico/*.pdf'
+        inf = preparePathsForUpload(infPath)
+        outputFiles = listdir('../output/raw/InformeEpidemiologico')
+        for eachinf in inf:
+            sourceFile = eachinf[1].split('/')[1].replace('.pdf', '')
 
-                        if [x for x in outputFiles if sourceFile in x]:
-                            print(sourceFile + ' was already processed')
-                        else:
-                            print('processing ' + sourceFile)
-                            upload_file(eachsit[0], 'do-covid19', eachinf[1])
-                            jobId = startJob(myS3, eachinf[1])
-                            myfile = open("jobs.log", 'a+')
-                            myfile.write(eachrep[1] + ': ' + jobId + '\n')
-                            myfile.close()
-                            if (isJobComplete(jobId)):
-                                response = getJobResults(jobId)
-                                result = get_table_pd_results(response)
-                                a = pandizer(result)
-                                dumpDict2csv(a, sourceFile, '../output/raw/InformeEpidemiologico/')
+            if [x for x in outputFiles if sourceFile in x]:
+                print(sourceFile + ' was already processed')
+            else:
+                print('processing ' + sourceFile)
+                upload_file(eachsit[0], 'do-covid19', eachinf[1])
+                jobId = startJob(myS3, eachinf[1])
+                myfile = open("jobs.log", 'a+')
+                myfile.write(eachrep[1] + ': ' + jobId + '\n')
+                myfile.close()
+                if (isJobComplete(jobId)):
+                    response = getJobResults(jobId)
+                    result = get_table_pd_results(response)
+                    a = pandizer(result)
+                    dumpDict2csv(a, sourceFile, '../output/raw/InformeEpidemiologico/')
