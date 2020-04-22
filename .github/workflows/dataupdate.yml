@@ -43,5 +43,6 @@ jobs:
         branch-suffix: timestamp
         committer: seba github bot <actions@github.com>
         reviewers: pdaire, fzmolina, raliaga, dna33, scornejo
+        base: integration
 
 
