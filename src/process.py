@@ -5,7 +5,7 @@ from os import listdir
 from pprint import pprint
 
 if __name__ == '__main__':
-    test = True
+    test = False
     if test:
         manyJobs = ['1613f7691076bd99cef29d85bdba25e388f69d9d61da3ff492bff8650f47b931',
                     'd06663b849a8e20341c5926b9c10438de827f353384bccf3a3423a693e99f9c3',
