@@ -1,0 +1,24 @@
+,,,,,,,Numero,deCasos,segun,FechadeInicio,deSintomas,,,,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abri al 18 de abril) 
+Bulnes ,22.607 ,48 ,"212,3 ",6 ,"26,5 ",6 ,"26,5 ",0 ,0 ,O ,8 ,27 ,9 ,4 ,0 
+Chillan ,198.624 ,387 ,"194,8 ",57 ,"28,7 ",51 ,"25,7 ",1 ,2 ,31 ,120 ,120 ,76 ,32 ,5 
+Chillan Viejo ,33.827 ,45 ,"133,0 ",7 ,"20,7 ",7 ,"20,7 ",0 ,O ,4 ,5 ,22 ,8 ,6 ,O 
+Cobquecura ,5.275 ,0 ,"0,0 ",0 ,"0,0 ",O ,"0,0 ",0 ,0 ,O ,0 ,O ,O ,O ,O 
+Coelemu ,16.845 ,4 ,"23,7 ",0 ,"0,0 ",O ,"0,0 ",0 ,0 ,O ,0 ,2 ,2 ,O ,0 
+Coihueco ,28.375 ,14 ,"49,3 ",6 ,"21,1 ",5 ,"17,6 ",0 ,O ,O ,3 ,2 ,3 ,3 ,3 
+EI Carmen ,12.334 ,3 ,"24,3 ",1 ,"8,1 ",1 ,"8,1 ",0 ,0 ,0 ,1 ,1 ,1 ,0 ,0 
+Ninhue ,5.414 ,3 ,"55,4 ",2 ,"36,9 ",2 ,"36,9 ",0 ,O ,O ,O ,O ,2 ,O ,1 
+Niquen ,11.567 ,2 ,"17,3 ",2 ,"17,3 ",2 ,"17,3 ",0 ,0 ,0 ,0 ,O ,O ,2 ,O 
+Pemuco ,8.639 ,4 ,"46,3 ",1 ,"11,6 ",1 ,"11,6 ",0 ,0 ,O ,1 ,O ,3 ,O ,0 
+Pinto ,11.880 ,10 ,"84,2 ",3 ,"25,3 ",3 ,"25,3 ",0 ,0 ,O ,2 ,2 ,4 ,1 ,1 
+Portezuelo & ,4.940 ,O ,"0,0 ",0 ,"0,0 ",O ,"0,0 ",0 ,0 ,O ,0 ,O ,O ,O ,O 
+Quillon ,18.777 ,24 ,"127,8 ",1 ,"5,3 ",0 ,"0,0 ",0 ,0 ,1 ,8 ,8 ,6 ,1 ,0 
+Quirihue & ,12.192 ,3 ,"24,6 ",0 ,"0,0 ",O ,"0,0 ",0 ,0 ,O ,0 ,O ,2 ,0 ,1 
+Ranquil & ,6.261 ,9 ,"143,7 ",0 ,"0,0 ",O ,"0,0 ",0 ,0 ,O ,3 ,2 ,4 ,0 ,O 
+San Carlos ,56.252 ,31 ,"55,1 ",5 ,"8,9 ",5 ,"8,9 ",0 ,0 ,3 ,7 ,9 ,9 ,3 ,0 
+San Fabian ,4.654 ,6 ,"128,9 ",1 ,"21,5 ",1 ,"21,5 ",O ,0 ,O ,2 ,3 ,1 ,O ,O 
+San Ignacio & ,16.624 ,4 ,"24,1 ",1 ,"6,0 ",1 ,"6,0 ",0 ,0 ,O ,1 ,2 ,1 ,0 ,0 
+San Nicolas ,12.172 ,14 ,"115,0 ",5 ,"41,1 ",4 ,"32,9 ",0 ,0 ,1 ,1 ,4 ,5 ,3 ,0 
+Treguaco ,5.696 ,O ,"0,0 ",0 ,"0,0 ",O ,"0,0 ",0 ,0 ,O ,0 ,O ,O ,O ,0 
+Yungay ,18.596 ,45 ,"242,0 ",13 ,"69,9 ",13 ,"69,9 ",0 ,0 ,0 ,6 ,12 ,23 ,3 ,1 
+Total ,511.551 ,656 ,"128,2 ",111 ,"21,7 ",102 ,"19,9 ",1 ,2 ,40 ,168 ,216 ,159 ,58 ,12 

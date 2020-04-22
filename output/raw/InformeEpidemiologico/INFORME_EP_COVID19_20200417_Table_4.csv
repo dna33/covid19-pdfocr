@@ -1,0 +1,10 @@
+,,,,,,,Numero,deCasos,segun,FechadeInicio,deSintomas,,,,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abri al 18 de abril) 
+Alto Hospicio ,129.999 ,16 ,"12,3 ",7 ,"5,4 ",7 ,"5,4 ",0 ,0 ,0 ,2 ,4 ,4 ,5 ,1 
+Camina ,1.375 ,0 ,"0,0 ",O ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,0 ,0 ,0 ,0 ,O 
+Colchane ,1.583 ,0 ,"0,0 ",O ,"0,0 ",0 ,"0,0 ",0 ,O ,0 ,0 ,O ,O ,O ,O 
+Huara ,3.000 ,0 ,"0,0 ",O ,"0,0 ",0 ,"0,0 ",O ,O ,O ,O ,O ,O ,0 ,0 
+Iquique ,223.463 ,31 ,"13,9 ",10 ,"4,5 ",10 ,"4,5 ",0 ,0 ,0 ,9 ,6 ,11 ,4 ,1 
+Pica ,5.958 ,24 ,"402,8 ",21 ,"352,5 ",21 ,"352,5 ",0 ,0 ,0 ,0 ,1 ,7 ,14 ,2 
+Pozo Almonte ,17.395 ,2 ,"11,5 ",O ,"0,0 ",0 ,"0,0 ",0 ,O ,0 ,0 ,0 ,2 ,0 ,0 
+Total ,382.773 ,73 ,"19,1 ",38 ,"9,9 ",38 ,"9,9 ",0 ,0 ,0 ,11 ,11 ,24 ,23 ,4 

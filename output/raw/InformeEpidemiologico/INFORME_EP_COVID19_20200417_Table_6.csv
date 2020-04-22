@@ -1,0 +1,12 @@
+,,,,,,,Numero,deCasos,segunFecha,deInicio,deSintomas,,,,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abril al 18 de abril) 
+Alto del Carmen ,5.729 ,O ,"0,0 ",0 ,"0,0 ",O ,"0,0 ",0 ,O ,0 ,O ,0 ,O ,0 ,O 
+Caldera ,19.426 ,O ,"0,0 ",0 ,"0,0 ",O ,"0,0 ",O ,O ,0 ,O ,0 ,O ,O ,O 
+Chanaral ,13.164 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,0 ,0 ,O ,0 ,O 
+Copiapo ,171.766 ,8 ,"4,7 ",5 ,"2,9 ",5 ,"2,9 ",O ,O ,1 ,O ,2 ,2 ,3 ,0 
+Diego de Almagro ,14.358 ,1 ,"7,0 ",O ,"0,0 ",0 ,"0,0 ",0 ,O ,0 ,O ,1 ,O ,0 ,O 
+Freirina ,7.681 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,O ,0 ,O ,0 ,O ,O ,O 
+Huasco ,11.264 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,O ,0 ,O ,0 ,O ,0 ,O 
+Tierra Amarilla ,14.312 ,4 ,"27,9 ",4 ,"27,9 ",4 ,"27,9 ",0 ,O ,0 ,O ,0 ,2 ,2 ,O 
+Vallenar ,57.009 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,O ,0 ,O ,0 ,O 
+Total ,314.709 ,13 ,"4,1 ",9 ,"2,9 ",9 ,"2,9 ",0 ,0 ,1 ,0 ,3 ,4 ,5 ,0 

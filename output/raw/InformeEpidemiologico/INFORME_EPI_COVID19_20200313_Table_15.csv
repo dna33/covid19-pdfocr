@@ -1,0 +1,21 @@
+Region,Poblacion,NumerodeCasosConfirmados,Tasaincidenciaacumulada,NumerodeCasosActuales,TasadeIncidenciaActual,NumerodeCasosActivos,TasadeIncidenciaActivos,SE9(23al29defebrero),SE10(1al7demarzo),SE11(8al14demarzo),SE12(15al21demarzo),SE13(22al28demarzo),SE14(29demarzoal4deabril),SE15(4deabrilal11deabril)
+Cauquenes ,44.143 ,4 ,"9,1 ",2 ,"4,5 ",2 ,"4,5 ",O ,0 ,O ,0 ,2 ,2 ,O 
+Chanco ,9.331 ,0 ,O ,0 ,"0,0 ",0 ,"0,0 ",O ,0 ,0 ,0 ,O ,O ,O 
+Colbun ,22.565 ,5 ,"22,2 ",2 ,"8,9 ",2 ,"8,9 ",O ,0 ,O ,0 ,3 ,2 ,O 
+Constitucion ,50.348 ,5 ,"9,9 ",1 ,"2,0 ",1 ,"2,0 ",0 ,0 ,O ,0 ,4 ,1 ,O 
+Curepto ,9.426 ,3 ,"31,8 ",3 ,"31,8 ",3 ,"31,8 ",O ,0 ,0 ,0 ,O ,3 ,O 
+Curico ,163.626 ,20 ,"12,2 ",8 ,"4,9 ",8 ,"4,9 ",O ,1 ,2 ,3 ,6 ,3 ,5 
+Empedrado ,4.206 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,0 ,O ,O ,O 
+Hualane ,10.222 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",O ,0 ,0 ,O ,0 ,O ,O 
+Licanten ,6.989 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,0 ,O ,0 ,O 
+Linares ,101.073 ,13 ,"12,9 ",5 ,"4,9 ",5 ,"4,9 ",1 ,O ,O ,2 ,5 ,5 ,O 
+Longavi ,32.810 ,2 ,"6,1 ",1 ,"3,0 ",O ,"0,0 ",O ,O ,0 ,1 ,O ,1 ,O 
+Maule ,60.000 ,4 ,"6,7 ",2 ,"3,3 ",2 ,"3,3 ",0 ,0 ,0 ,1 ,1 ,1 ,1 
+Molina ,49.800 ,3 ,"6,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,1 ,2 ,O ,O 
+Parral ,44.544 ,6 ,"13,5 ",2 ,"4,5 ",2 ,"4,5 ",O ,0 ,0 ,1 ,3 ,1 ,1 
+Pelarco ,9.083 ,3 ,33 ,3 ,"33,0 ",3 ,"33,0 ",0 ,0 ,0 ,0 ,0 ,0 ,3 
+Pelluhue ,8.092 ,1 ,"12,4 ",0 ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,1 ,0 ,0 ,0 
+Pencahue ,8.601 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",O ,0 ,0 ,0 ,O ,O ,O 
+Rauco ,11.248 ,2 ,"17,8 ",1 ,"8,9 ",1 ,"8,9 ",0 ,0 ,0 ,0 ,1 ,1 ,0 
+Retiro ,21.071 ,1 ,"4,7 ",1 ,"4,7 ",1 ,"4,7 ",O ,0 ,0 ,0 ,O ,O ,1 
+Rio Claro ,14.753 ,3 ,"20,3 ",2 ,"13,6 ",2 ,"13,6 ",O ,0 ,0 ,1 ,0 ,1 ,1 

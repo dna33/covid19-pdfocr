@@ -1,0 +1,21 @@
+,,,,,,,Numero,deCasos,segun,FechadeInicio,deSintomas,,,,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abri al 18 de abril) 
+Alhue ,7.405 ,0 ,"0,0 ",0 ,"0,0 ",0 ,"0,0 ",0 ,0 ,0 ,0 ,O ,0 ,0 ,O 
+Buin ,109.641 ,40 ,"36,5 ",15 ,"13,7 ",13 ,"11,9 ",0 ,0 ,0 ,3 ,18 ,9 ,10 ,O 
+Calera de Tango ,28.525 ,10 ,"35,1 ",0 ,"0,0 ",O ,"0,0 ",O ,O ,O ,4 ,5 ,1 ,O ,O 
+Cerrillos ,88.956 ,39 ,"43,8 ",19 ,"21,4 ",18 ,"20,2 ",0 ,1 ,2 ,4 ,9 ,10 ,12 ,1 
+Cerro Navia ,142.465 ,65 ,"45,6 ",29 ,"20,4 ",28 ,"19,7 ",0 ,0 ,8 ,12 ,10 ,12 ,22 ,1 
+Colina ,180.353 ,77 ,"42,7 ",15 ,"8,3 ",15 ,"8,3 ",O ,3 ,6 ,29 ,17 ,16 ,5 ,1 
+Conchali ,139.195 ,56 ,"40,2 ",27 ,"19,4 ",26 ,"18,7 ",0 ,O ,1 ,14 ,12 ,15 ,13 ,1 
+Curacavi ,36.430 ,14 ,"38,4 ",4 ,"11,0 ",4 ,"11,0 ",O ,O ,1 ,2 ,4 ,4 ,3 ,O 
+EI Bosque ,172.000 ,93 ,"54,1 ",43 ,"25,0 ",42 ,"24,4 ",O ,O ,2 ,14 ,21 ,25 ,28 ,3 
+EI Monte ,40.014 ,10 ,"25,0 ",4 ,"10,0 ",4 ,"10,0 ",0 ,O ,O ,1 ,1 ,6 ,2 ,O 
+Estacion Central ,206.792 ,89 ,"43,0 ",39 ,"18,9 ",39 ,"18,9 ",O ,1 ,2 ,11 ,24 ,24 ,24 ,3 
+Huechuraba ,112.528 ,53 ,"47,1 ",21 ,"18,7 ",21 ,"18,7 ",0 ,O ,4 ,18 ,7 ,14 ,10 ,O 
+Independencia ,142.065 ,60 ,"42,2 ",29 ,"20,4 ",28 ,"19,7 ",O ,0 ,3 ,13 ,8 ,19 ,15 ,2 
+Isla de Maipo ,40.171 ,11 ,"27,4 ",5 ,"12,4 ",5 ,"12,4 ",0 ,O ,O ,2 ,1 ,6 ,2 ,O 
+La Cisterna ,100.434 ,45 ,"44,8 ",24 ,"23,9 ",24 ,"23,9 ",0 ,0 ,O ,10 ,7 ,12 ,14 ,2 
+La Florida ,402.433 ,176 ,"43,7 ",65 ,"16,2 ",62 ,"15,4 ",0 ,2 ,12 ,27 ,52 ,46 ,34 ,3 
+La Granja ,122.557 ,51 ,"41,6 ",23 ,"18,8 ",22 ,"18,0 ",0 ,O ,1 ,6 ,13 ,17 ,13 ,1 
+La Pintana ,189.335 ,70 ,"37,0 ",38 ,"20,1 ",38 ,"20,1 ",0 ,O ,2 ,6 ,14 ,23 ,23 ,2 
+La Reina ,100.252 ,56 ,"55,9 ",14 ,"14,0 ",13 ,"13,0 ",1 ,O ,12 ,14 ,11 ,13 ,5 ,O 

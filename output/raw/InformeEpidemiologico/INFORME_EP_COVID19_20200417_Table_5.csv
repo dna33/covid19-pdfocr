@@ -1,0 +1,12 @@
+,,,,,,,Numero,deCasos,segunFecha,deInicio,deSintomas,,,,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abril al 18 de abril) 
+Antofagasta ,425.725 ,145 ,"34,1 ",63 ,"14,8 ",62 ,"14,6 ",O ,1 ,2 ,26 ,31 ,33 ,42 ,10 
+Calama ,190.336 ,21 ,"11,0 ",10 ,"5,3 ",10 ,"5,3 ",1 ,O ,2 ,3 ,2 ,6 ,7 ,0 
+Maria Elena ,6.814 ,4 ,"58,7 ",4 ,"58,7 ",4 ,"58,7 ",O ,O ,0 ,O ,O ,0 ,4 ,0 
+Mejillones ,14.776 ,19 ,"128,6 ",14 ,"94,7 ",14 ,"94,7 ",O ,O ,0 ,O ,1 ,7 ,8 ,3 
+Ollague ,287 ,O ,"0,0 ",O ,"0,0 ",O ,"0,0 ",O ,0 ,0 ,O ,O ,O ,O ,O 
+San Pedro de Atacama ,10.434 ,4 ,"38,3 ",0 ,"0,0 ",O ,"0,0 ",0 ,0 ,0 ,2 ,1 ,1 ,O ,O 
+Sierra Gorda ,1.746 ,O ,"0,0 ",0 ,"0,0 ",O ,"0,0 ",O ,O ,0 ,O ,O ,O ,O ,0 
+Taltal ,13.657 ,7 ,"51,3 ",5 ,"36,6 ",5 ,"36,6 ",O ,O ,0 ,O ,O ,2 ,3 ,2 
+Tocopilla ,28.079 ,11 ,"39,2 ",8 ,"28,5 ",8 ,"28,5 ",O ,0 ,0 ,2 ,O ,4 ,5 ,O 
+Total ,691.854 ,211 ,"30,5 ",104 ,"15,0 ",103 ,"14,9 ",1 ,1 ,4 ,33 ,35 ,53 ,69 ,15 
