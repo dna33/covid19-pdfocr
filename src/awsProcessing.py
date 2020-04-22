@@ -2,8 +2,7 @@ import time
 import boto3
 import glob
 from botocore.exceptions import ClientError
-from pprint import pprint
-import pandas as pd
+
 
 #PDF are processed asynchronously: files must be on S3
 
@@ -60,13 +59,14 @@ def preparePathsForUpload(path):
     myList = []
     for file in glob.glob(path):
         filename = file.replace('\\', '/')
-        s3path = filename.replace('../raw/', '')
+        s3path = filename.replace('../input/', '')
         print('filename: ' + filename + ' and will be stored at ' + s3path)
         myList.append([filename, s3path])
     return myList
 
 
 def startJob(s3BucketName, objectName):
+    print('Request processing for ' + objectName)
     response = None
     client = boto3.client('textract', region_name='us-east-1')
     response = client.start_document_analysis(
@@ -240,9 +240,9 @@ def get_text(result, blocks_map):
 if __name__ == "__main__":
     # upload files to s3 from these paths
     myS3 = 'do-covid19'
-    informePath = '../raw/InformeEpidemiologico/*.pdf'
-    reportePath = '../raw/ReporteDiario/*.pdf'
-    situacionPath = '../raw/InformeSituacionCOVID19/*.pdf'
+    informePath = '../input/InformeEpidemiologico/*.pdf'
+    reportePath = '../input/ReporteDiario/*.pdf'
+    situacionPath = '../input/InformeSituacionCOVID19/*.pdf'
     inf = preparePathsForUpload(informePath)
     for eachinf in inf:
         upload_file(eachinf[0], 'do-covid19', eachinf[1])

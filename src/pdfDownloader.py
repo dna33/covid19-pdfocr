@@ -72,8 +72,8 @@ def obtenerSituacionCOVID19(reporte_url, path):
     return pdfs
 
 if __name__ == '__main__':
-    obtenerInformeEpidemiologico('https://www.gob.cl/coronavirus/cifrasoficiales/', '../raw/InformeEpidemiologico/')
+    obtenerInformeEpidemiologico('https://www.gob.cl/coronavirus/cifrasoficiales/', '../input/InformeEpidemiologico/')
 
-    obtenerReporteDiario('https://www.gob.cl/coronavirus/cifrasoficiales/', '../raw/ReporteDiario/')
+    obtenerReporteDiario('https://www.gob.cl/coronavirus/cifrasoficiales/', '../input/ReporteDiario/')
 
-    obtenerSituacionCOVID19('http://epi.minsal.cl/informes-covid-19/', '../raw/InformeSituacionCOVID19/')
+    obtenerSituacionCOVID19('http://epi.minsal.cl/informes-covid-19/', '../input/InformeSituacionCOVID19/')

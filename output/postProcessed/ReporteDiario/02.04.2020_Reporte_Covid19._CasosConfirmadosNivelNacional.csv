@@ -1,0 +1,18 @@
+Region,Codigoregion,Casosnuevos,CasosTotales,%Total,Fallecidos
+Arica y Parinacota,15,1 ,7 ,0% ,O 
+Tarapacá,01,2 ,12 ,0% ,O 
+Antofagasta,02,8 ,47 ,1% ,O 
+Atacama,03,O ,3 ,0% ,O 
+Coquimbo,04,4 ,34 ,1% ,O 
+Valparaíso,05,20 ,156 ,5% ,1 
+Metropolitana,13,115 ,1.636 ,48% ,6 
+O’Higgins,06,6 ,32 ,1% ,O 
+Maule,07,11 ,82 ,2% ,1 
+Ñuble,16,82 ,341 ,10% ,O 
+Biobío,08,35 ,275 ,8% ,2 
+Araucanía,09,46 ,389 ,11% ,7 
+Los Ríos,14,4 ,68 ,2% ,1 
+Los Lagos,10,22 ,203 ,6% ,O 
+Aysén,11,2 ,5 ,0% ,O 
+Magallanes,12,15 ,114 ,3% ,O 
+Total,,373 ,3.404 ,100% ,18 

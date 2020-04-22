@@ -1,3 +1,5 @@
 venv-*
 raw
 .idea*
+input
+jobs.txt
