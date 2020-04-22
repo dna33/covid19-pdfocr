@@ -1,0 +1,21 @@
+Region,Poblacion,NumerodeCasosConfirmados,Tasaincidenciaacumulada,NumerodeCasosActuales,TasadeIncidenciaActual,NumerodeCasosActivos,TasadeIncidenciaActivos,SE9(23al29defebrero),SE10(1al7demarzo),SE11(8al14demarzo),SE12(15al21demarzo),SE13(22al28demarzo),SE14(29demarzoal4deabril),SE15(4deabrilal11deabril)
+Algarrobo ,15174 ,8 ,52.7 ,O ,0.0 ,O ,0.0 ,O ,0 ,1 ,3 ,4 ,O ,O 
+Cabildo ,20663 ,O ,0.0 ,O ,0.0 ,0 ,0.0 ,O ,0 ,0 ,0 ,O ,O ,O 
+Calera ,53591 ,9 ,16.8 ,1 ,1.9 ,1 ,1.9 ,O ,O ,O ,2 ,6 ,1 ,O 
+Calle Larga ,16482 ,2 ,12.1 ,2 ,12.1 ,2 ,12.1 ,0 ,0 ,O ,0 ,0 ,1 ,1 
+Cartagena ,25357 ,2 ,7.9 ,2 ,7.9 ,2 ,7.9 ,O ,0 ,0 ,0 ,O ,2 ,O 
+Casablanca ,29170 ,3 ,10.3 ,2 ,6.9 ,2 ,6.9 ,O ,0 ,0 ,1 ,O ,1 ,1 
+Catemu ,15213 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,0 ,O ,0 ,0 ,O ,0 ,O 
+Concon ,45889 ,6 ,13.1 ,1 ,2.2 ,1 ,2.2 ,O ,O ,0 ,1 ,4 ,1 ,O 
+EI Quisco ,17742 ,3 ,16.9 ,2 ,11.3 ,2 ,11.3 ,0 ,0 ,0 ,1 ,0 ,2 ,O 
+EI Tabo ,14338 ,2 ,13.9 ,O ,0.0 ,0 ,0.0 ,O ,0 ,O ,0 ,2 ,O ,O 
+Hijuelas ,19099 ,0 ,0.0 ,0 ,0.0 ,0 ,0.0 ,O ,O ,0 ,0 ,O ,0 ,O 
+Isla de Pascua ,8277 ,6 ,72.5 ,3 ,36.2 ,3 ,36.2 ,0 ,0 ,0 ,2 ,1 ,2 ,1 
+Juan Fernandez ,1033 ,0 ,0.0 ,0 ,290.4 ,0 ,290.4 ,0 ,0 ,0 ,0 ,0 ,0 ,O 
+La Cruz ,25321 ,5 ,19.7 ,3 ,3.9 ,3 ,3.9 ,O ,1 ,0 ,0 ,1 ,2 ,1 
+La Ligua ,37739 ,2 ,5.3 ,1 ,15.9 ,1 ,15.9 ,O ,0 ,0 ,1 ,0 ,1 ,0 
+Limache ,49931 ,8 ,16 ,6 ,0.0 ,6 ,0.0 ,0 ,0 ,0 ,2 ,0 ,5 ,1 
+Llaillay ,26533 ,2 ,7.5 ,O ,11.3 ,0 ,11.3 ,O ,0 ,0 ,1 ,1 ,O ,O 
+Los Andes ,68093 ,6 ,8.8 ,3 ,0.0 ,3 ,0.0 ,0 ,0 ,0 ,1 ,2 ,2 ,1 
+Nogales ,23490 ,O ,0.0 ,O ,4.3 ,O ,4.3 ,O ,0 ,0 ,0 ,O ,0 ,O 
+Olmue ,19266 ,1 ,5.2 ,1 ,0.0 ,1 ,0.0 ,O ,0 ,0 ,0 ,0 ,1 ,O 

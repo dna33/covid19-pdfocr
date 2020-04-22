@@ -1,0 +1,24 @@
+,,,,,,,Numero,deCasos,segun,FechadeInicio,deSintomas,,,,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abri al 18 de abril) 
+Bulnes ,22607 ,48 ,212.3 ,6 ,26.5 ,6 ,26.5 ,0 ,0 ,O ,8 ,27 ,9 ,4 ,0 
+Chillan ,198624 ,387 ,194.8 ,57 ,28.7 ,51 ,25.7 ,1 ,2 ,31 ,120 ,120 ,76 ,32 ,5 
+Chillan Viejo ,33827 ,45 ,133.0 ,7 ,20.7 ,7 ,20.7 ,0 ,O ,4 ,5 ,22 ,8 ,6 ,O 
+Cobquecura ,5275 ,0 ,0.0 ,0 ,0.0 ,O ,0.0 ,0 ,0 ,O ,0 ,O ,O ,O ,O 
+Coelemu ,16845 ,4 ,23.7 ,0 ,0.0 ,O ,0.0 ,0 ,0 ,O ,0 ,2 ,2 ,O ,0 
+Coihueco ,28375 ,14 ,49.3 ,6 ,21.1 ,5 ,17.6 ,0 ,O ,O ,3 ,2 ,3 ,3 ,3 
+EI Carmen ,12334 ,3 ,24.3 ,1 ,8.1 ,1 ,8.1 ,0 ,0 ,0 ,1 ,1 ,1 ,0 ,0 
+Ninhue ,5414 ,3 ,55.4 ,2 ,36.9 ,2 ,36.9 ,0 ,O ,O ,O ,O ,2 ,O ,1 
+Niquen ,11567 ,2 ,17.3 ,2 ,17.3 ,2 ,17.3 ,0 ,0 ,0 ,0 ,O ,O ,2 ,O 
+Pemuco ,8639 ,4 ,46.3 ,1 ,11.6 ,1 ,11.6 ,0 ,0 ,O ,1 ,O ,3 ,O ,0 
+Pinto ,11880 ,10 ,84.2 ,3 ,25.3 ,3 ,25.3 ,0 ,0 ,O ,2 ,2 ,4 ,1 ,1 
+Portezuelo & ,4940 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,0 ,0 ,O ,0 ,O ,O ,O ,O 
+Quillon ,18777 ,24 ,127.8 ,1 ,5.3 ,0 ,0.0 ,0 ,0 ,1 ,8 ,8 ,6 ,1 ,0 
+Quirihue & ,12192 ,3 ,24.6 ,0 ,0.0 ,O ,0.0 ,0 ,0 ,O ,0 ,O ,2 ,0 ,1 
+Ranquil & ,6261 ,9 ,143.7 ,0 ,0.0 ,O ,0.0 ,0 ,0 ,O ,3 ,2 ,4 ,0 ,O 
+San Carlos ,56252 ,31 ,55.1 ,5 ,8.9 ,5 ,8.9 ,0 ,0 ,3 ,7 ,9 ,9 ,3 ,0 
+San Fabian ,4654 ,6 ,128.9 ,1 ,21.5 ,1 ,21.5 ,O ,0 ,O ,2 ,3 ,1 ,O ,O 
+San Ignacio & ,16624 ,4 ,24.1 ,1 ,6.0 ,1 ,6.0 ,0 ,0 ,O ,1 ,2 ,1 ,0 ,0 
+San Nicolas ,12172 ,14 ,115.0 ,5 ,41.1 ,4 ,32.9 ,0 ,0 ,1 ,1 ,4 ,5 ,3 ,0 
+Treguaco ,5696 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,0 ,0 ,O ,0 ,O ,O ,O ,0 
+Yungay ,18596 ,45 ,242.0 ,13 ,69.9 ,13 ,69.9 ,0 ,0 ,0 ,6 ,12 ,23 ,3 ,1 
+Total ,511551 ,656 ,128.2 ,111 ,21.7 ,102 ,19.9 ,1 ,2 ,40 ,168 ,216 ,159 ,58 ,12 

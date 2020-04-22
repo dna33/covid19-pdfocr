@@ -1,0 +1,9 @@
+Region,Poblacion,NumerodeCasosConfirmados,Tasaincidenciaacumulada,NumerodeCasosActuales,TasadeIncidenciaActual,NumerodeCasosActivos,TasadeIncidenciaActivos,SE9(23al29defebrero),SE10(1al7demarzo),SE11(8al14demarzo),SE12(15al21demarzo),SE13(22al28demarzo),SE14(29demarzoal4deabril),SE15(4deabrilal11deabril)
+Alto Hospicio ,129999 ,14 ,10.8 ,8 ,6.2 ,8 ,6.2 ,O ,O ,O ,2 ,4 ,4 ,4 
+Camina ,1375 ,0 ,0.0 ,0 ,0.0 ,0 ,0.0 ,0 ,0 ,0 ,O ,0 ,0 ,0 
+Colchane ,1583 ,0 ,0.0 ,O ,0.0 ,0 ,0.0 ,0 ,0 ,0 ,0 ,0 ,O ,0 
+Huara ,3000 ,0 ,0.0 ,O ,0.0 ,O ,0.0 ,O ,0 ,0 ,O ,0 ,0 ,O 
+Iquique ,223463 ,26 ,11.6 ,11 ,4.9 ,11 ,4.9 ,O ,0 ,0 ,9 ,6 ,10 ,1 
+Pica ,5958 ,10 ,167.8 ,9 ,151.1 ,9 ,151.1 ,0 ,0 ,0 ,O ,1 ,2 ,7 
+Pozo Almonte ,17395 ,2 ,11.5 ,2 ,11.5 ,2 ,11.5 ,O ,0 ,O ,O ,0 ,2 ,O 
+Total ,382773 ,52 ,13.6 ,30 ,7.8 ,30 ,7.8 ,0 ,0 ,0 ,11 ,11 ,18 ,12 
