@@ -84,77 +84,20 @@ def pandizer(tables):
         df_list[table_key] = aux
     return df_list
 
-# def checkReporteDiario(tables):
-#     print(' Got ' + str(len(tables)) + ' tables to check for in reporte diario')
-#     reporteDiario = {}
-#     # REPORTE DIARIO nombres sin espacios por que no hay consistencia
-#
-#     headerCasosConfirmadosNivelNacional = ['Casosnuevos', 'CasosTotales', '%Total', '%Tota', 'Fallecidos']
-#     headerExámenesRealizadosNivelNacional = ['#examenesrealizados', '%total', '#examenesinformadosultimas24hrs']
-#     headerHospotalizacionUCIRegion = ['Region', '#pacientes', '%total']
-#     headerHospotalizacionUCIEtario = ['Tramosdeedad', '#pacientes', '%total']
-#
-#     for i in range(len(tables)):
-#         table_key = 'Table_' + str(i + 1)
-#         each_table = tables[i]
-#
-#     for table in tables:
-#         #drop empties:
-#         aux = [x for x in table.columns.tolist() if x]
-#
-#
-#         if set(aux).issubset(set(headerCasosConfirmadosNivelNacional)):
-#             # primeros reportes no dicen region en el encabezado
-#             table.rename(columns={"": "Region"}, inplace=True)
-#             regionName(table)
-#             print('tabla es CasosConfirmadosNivelNacional')
-#             reporteDiario['CasosConfirmadosNivelNacional'] = table
-#         elif set(aux).issubset(set(headerExámenesRealizadosNivelNacional)):
-#             table.rename(columns={"": "Institucion"}, inplace=True)
-#             table["Institucion"] = table["Institucion"].replace({"" : "Total"})
-#             print('tabla es ExámenesRealizadosNivelNacional')
-#             reporteDiario['ExámenesRealizadosNivelNacional'] = table
-#         elif set(aux).issubset(set(headerHospotalizacionUCIRegion)):
-#             regionName(table)
-#             print('tabla es HospitalizacionUCIRegion')
-#             reporteDiario['HospitalizacionUCIRegion'] = table
-#         elif set(aux).issubset(set(headerHospotalizacionUCIEtario)):
-#             print('tabla es HospitalizacionUCIEtario')
-#             reporteDiario['HospitalizacionUCIEtario'] = table
-#         else:
-#             print('No podemos identificar la tabla:')
-#             # el grafico del 8 de abril lo identificamos como tabla
-#             if table.columns.isin(['24.03Mier']).any():
-#                 print('known problem on 08.04.2020_Reporte_Covid19')
-#             else:
-#                 raise Exception('No pudimos identificar la tabla')
-#     return reporteDiario
-#
-# def tableIdentifier(tables):
-#     """
-#     tableIdentifier identifica las tablas que salen de textract en fucion de sus encabezados.
-#
-#     :param tables: dict of pandas dataframe
-#     :return:
-#     """
-#     # la unica forma confiable de identificar las tablas es en base a sus columnas.
-#     # asumo que textract funciona
-#
-#
-#     lenTables = len(tables)
-#     print(' Got ' + str(lenTables) + ' tables to identify')
-#
-#     repDiario = checkReporteDiario(tables)
-#
-#     if repDiario:
-#         return repDiario
 
 def dumpDict2csv(dict, source, output):
-    print(source + ' had ' + str(len(dict)) + ' tables')
-    for k in dict.keys():
-        filename = output + source + '_' + str(k) + '.csv'
-        print(k + ' will be stored as ' + filename)
-        dict[k].to_csv(filename, index=False)
+    if dict:
+        print(source + ' had ' + str(len(dict)) + ' tables')
+        for k in dict.keys():
+            filename = output + source + '_' + str(k) + '.csv'
+            print(k + ' will be stored as ' + filename)
+            dict[k].to_csv(filename, index=False)
+    else:
+        print(source + ' has no tables')
+        filename = output + source + '_NOTABLES' + '.csv'
+        myfile = open(filename, 'a+')
+        myfile.write(source + ' has no tables')
+        myfile.close()
 
 
 
