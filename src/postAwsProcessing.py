@@ -69,6 +69,9 @@ def pandizer(tables):
     lenTables = len(tables)
     print(' Got ' + str(lenTables) + ' tables to pandize')
     df_list = {}
+    if tables == '<b> NO Table FOUND </b>':
+        print(tables)
+        return df_list
     for i in range(lenTables):
         table_key = 'Table_' + str(i + 1)
         each_table = tables[i]
