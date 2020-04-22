@@ -11,7 +11,14 @@ El flujo de procesamiento es:
  2. Estos archivos se guardan localmente en `input`
  3. A continuación se suben a un bucket privado en AWS, `do-covid19`
  4. Esos pdfs son procesados por `textract`
- 5. El output es rescatado, transformado a pandas dataframe y escrito a disco como pdf
+ 5. El output es rescatado, transformado a pandas dataframe y escrito a disco como pdf.
+ 6. Post procesamos (POR HACER!)
+ 
+ Usamos el disco local como buffer para cada etapa dado que el proyecto se encuentra en desarrollo.
+ Por eso el repo es pesado y lleva pdfs y csvs ya recuperados.
+ 
+ Si quieres correr el script, se genera un archivo `jobs.log` que tiene los ids de los jobs ejecutados.
+ Con esos ids puedes invocar el `process.py` con el flag `test=True`, obteniendo los resultados de textract rapidamente
  
  ## Por hacer
  

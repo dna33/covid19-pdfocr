@@ -36,7 +36,7 @@ if __name__ == '__main__':
                 print('processing ' + sourceFile)
                 upload_file(eachrep[0], 'do-covid19', eachrep[1])
                 jobId = startJob(myS3, eachrep[1])
-                myfile = open("jobs.txt", 'a+')
+                myfile = open("jobs.log", 'a+')
                 myfile.write(sourceFile + ': ' + jobId + '\n')
                 myfile.close()
                 if (isJobComplete(jobId)):
@@ -50,6 +50,7 @@ if __name__ == '__main__':
             situacionPath = '../input/InformeSituacionCOVID19/*.pdf'
             sit = preparePathsForUpload(situacionPath)
             outputFiles = listdir('../output/raw/InformeSituacionCOVID19')
+            print('All processed files are ' + outputFiles)
             for eachsit in sit:
                 sourceFile = eachsit[1].split('/')[1].replace('.pdf', '')
 
@@ -59,7 +60,7 @@ if __name__ == '__main__':
                     print('processing ' + sourceFile)
                     upload_file(eachsit[0], 'do-covid19', eachsit[1])
                     jobId = startJob(myS3, eachsit[1])
-                    myfile = open("jobs.txt", 'a+')
+                    myfile = open("jobs.log", 'a+')
                     myfile.write(sourceFile + ': ' + jobId + '\n')
                     myfile.close()
                     if (isJobComplete(jobId)):
@@ -69,10 +70,10 @@ if __name__ == '__main__':
                         dumpDict2csv(a, sourceFile, '../output/raw/InformeSituacionCOVID19/')
 
                     # INFORME EPIDEMIOLOGICO
-                    obtenerSituacionCOVID19('http://epi.minsal.cl/informes-covid-19/',
-                                            '../input/InformeEpidemiologico/')
-                    situacionPath = '../input/InformeEpidemiologico/*.pdf'
-                    sit = preparePathsForUpload(situacionPath)
+                    obtenerInformeEpidemiologico('https://www.gob.cl/coronavirus/cifrasoficiales/',
+                                                 '../input/InformeEpidemiologico/')
+                    infPath = '../input/InformeEpidemiologico/*.pdf'
+                    inf = preparePathsForUpload(infPath)
                     outputFiles = listdir('../output/raw/InformeEpidemiologico')
                     for eachinf in inf:
                         sourceFile = eachinf[1].split('/')[1].replace('.pdf', '')
@@ -83,7 +84,7 @@ if __name__ == '__main__':
                             print('processing ' + sourceFile)
                             upload_file(eachsit[0], 'do-covid19', eachinf[1])
                             jobId = startJob(myS3, eachinf[1])
-                            myfile = open("jobs.txt", 'a+')
+                            myfile = open("jobs.log", 'a+')
                             myfile.write(sourceFile + ': ' + jobId + '\n')
                             myfile.close()
                             if (isJobComplete(jobId)):

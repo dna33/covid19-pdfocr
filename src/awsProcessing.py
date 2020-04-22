@@ -54,13 +54,11 @@ def upload_file(file_name, bucket, object_name=None):
 
 
 def preparePathsForUpload(path):
-    #informePath = '../raw/InformeEpidemiologico/*.pdf'
-    #reportePath = '../raw/ReporteDiario/*.pdf'
     myList = []
     for file in glob.glob(path):
         filename = file.replace('\\', '/')
         s3path = filename.replace('../input/', '')
-        print('filename: ' + filename + ' and will be stored at ' + s3path)
+        print('filename: ' + filename + ' and will be stored at s3://do-covid-19/' + s3path)
         myList.append([filename, s3path])
     return myList
 
