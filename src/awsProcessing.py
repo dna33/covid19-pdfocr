@@ -232,7 +232,7 @@ def get_text(result, blocks_map):
                     if word['BlockType'] == 'SELECTION_ELEMENT':
                         if word['SelectionStatus'] =='SELECTED':
                             text += 'X '
-    return text
+    return text.replace(".", "").replace(",", ".")
 
 
 if __name__ == "__main__":
