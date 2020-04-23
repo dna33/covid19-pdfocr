@@ -10,8 +10,10 @@ from botocore.exceptions import ClientError
 def checkIfFileIsOnS3(bucket, object_name):
     s3_client = boto3.client('s3')
     try:
+        print('Checking if ' + object_name + ' is on ' + bucket)
         #Check if file was already uploaded
-        response = s3_client.list_objects(Bucket='do-covid19')
+
+        response = s3_client.list_objects(Bucket=bucket)
         for content in response.get('Contents', []):
             if object_name == content.get('Key'):
                 print(object_name + ' was already uploaded')
@@ -40,7 +42,7 @@ def upload_file(file_name, bucket, object_name=None):
     s3_client = boto3.client('s3')
     try:
         #Check if file was already uploaded
-        response = s3_client.list_objects(Bucket='do-covid19')
+        response = s3_client.list_objects(Bucket='do-covid-19')
         for content in response.get('Contents', []):
             if object_name == content.get('Key'):
                 print(object_name + ' was already uploaded')
@@ -237,19 +239,19 @@ def get_text(result, blocks_map):
 
 if __name__ == "__main__":
     # upload files to s3 from these paths
-    myS3 = 'do-covid19'
+    myS3 = 'do-covid-19'
     informePath = '../input/InformeEpidemiologico/*.pdf'
     reportePath = '../input/ReporteDiario/*.pdf'
     situacionPath = '../input/InformeSituacionCOVID19/*.pdf'
     inf = preparePathsForUpload(informePath)
     for eachinf in inf:
-        upload_file(eachinf[0], 'do-covid19', eachinf[1])
+        upload_file(eachinf[0], myS3, eachinf[1])
     rep = preparePathsForUpload(reportePath)
     for eachrep in rep:
-        upload_file(eachrep[0], 'do-covid19', eachrep[1])
+        upload_file(eachrep[0],myS3, eachrep[1])
     sit = preparePathsForUpload(situacionPath)
     for eachsit in sit:
-        upload_file(eachsit[0], 'do-covid19', eachsit[1])
+        upload_file(eachsit[0], myS3, eachsit[1])
 
     # Document
     documentName = rep[0][1]
