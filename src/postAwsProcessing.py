@@ -1,7 +1,7 @@
 import pandas as pd
 import boto3
 from botocore.exceptions import ClientError
-from os import listdir
+import glob
 
 TABLAS_REPORTE_DIARIO = {1: 'CasosConfirmadosNivelNacional', 2: 'ExamenesRealizadosNivelNacional',
                          3: 'HospitalizacionUCIRegion', 4: 'HospitalizacionUciEtario'}
@@ -104,7 +104,7 @@ def dumpDict2csv(dict, source, output):
 def putOutputOnS3(path, bucket):
     print('sync output from ' + path + ' to the bucket ' + bucket)
     s3_client = boto3.client('s3')
-    outputFiles = listdir(path)
+    outputFiles = glob.glob(path + '**/*.csv', recursive=True)
     try:
         # Check if file was already uploaded
         response = s3_client.list_objects(Bucket=bucket)
