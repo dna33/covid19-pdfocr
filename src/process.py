@@ -5,7 +5,7 @@ from os import listdir
 from pprint import pprint
 
 if __name__ == '__main__':
-    test = True
+    test = False
     myS3 = 'do-covid-19'
     if test:
 
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
         for eachrep in rep:
             # Check if the file was uploaded
-            if not checkIfFileIsOnS3(myS3, eachrep[1]):
+            if not checkForFileOnS3(myS3, eachrep[1]):
                 upload_file(eachrep[0], myS3, eachrep[1])
 
             # Check if the file was processed
@@ -81,7 +81,7 @@ if __name__ == '__main__':
         outputFiles = listdir('../output/raw/InformeSituacionCOVID19')
         for eachsit in sit:
             # Check if the file was uploaded
-            if not checkIfFileIsOnS3(myS3, eachsit[1]):
+            if not checkForFileOnS3(myS3, eachsit[1]):
                 upload_file(eachsit[0], myS3, eachsit[1])
 
             # Check if the file was processed
@@ -109,7 +109,7 @@ if __name__ == '__main__':
         outputFiles = listdir('../output/raw/InformeEpidemiologico')
         for eachinf in inf:
             # Check if the file was uploaded
-            if not checkIfFileIsOnS3(myS3, eachinf[1]):
+            if not checkForFileOnS3(myS3, eachinf[1]):
                 upload_file(eachinf[0], myS3, eachinf[1])
 
             # Check if the file was processed

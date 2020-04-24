@@ -7,31 +7,47 @@ import os
 #PDF are processed asynchronously: files must be on S3
 
 
-def checkIfFileIsOnS3(bucket, object_name):
-    s3_client = boto3.client('s3')
-    try:
-        print('Checking if ' + object_name + ' is on ' + bucket)
-        #Check if file was already uploaded
+# def checkIfFileIsOnS3(bucket, object_name):
+#     s3_client = boto3.client('s3')
+#     try:
+#         print('Checking if ' + object_name + ' is on ' + bucket)
+#         #Check if file was already uploaded
+#
+#         response = s3_client.list_objects(Bucket=bucket)
+#         for content in response.get('Contents', []):
+#             print(content)
+#             if object_name == content.get('Key'):
+#                 print(object_name + ' was already uploaded')
+#                 return True
+#             else:
+#                 return False
+#     except ClientError as e:
+#         print(e)
+#         return False
 
-        response = s3_client.list_objects(Bucket=bucket)
-        for content in response.get('Contents', []):
-            if object_name == content.get('Key'):
-                print(object_name + ' was already uploaded')
-                return True
-            else:
-                return False
-    except ClientError as e:
-        print(e)
+
+def checkForFileOnS3(bucketName, key):
+    s3 = boto3.resource('s3')
+    bucket = s3.Bucket(bucketName)
+    objs = list(bucket.objects.filter(Prefix=key))
+    print('Checking if ' + key + ' is on ' + bucketName)
+    if len(objs) > 0 and objs[0].key == key:
+        return True
+    else:
         return False
-
 
 def upload_folder(path, bucketname):
     for root, dirs, files in os.walk(path):
         s3_client = boto3.client('s3')
         for file in files:
-            s3path=os.path.join(root, file).replace('\\', '/').replace('../', '')
-            print('upload file ' + file + ' to ' + s3path)
-            s3_client.upload_file(os.path.join(root, file), bucketname, s3path)
+            s3path = os.path.join(root, file).replace('\\', '/').replace('../', '')
+            #if checkIfFileIsOnS3(bucketname, s3path):
+            if checkForFileOnS3(bucketname, s3path):
+                print(file + ' was uploaded')
+            else:
+                print('uploading ' + file)
+                filepath = os.path.join(root, file)
+                s3_client.upload_file(filepath, bucketname, s3path)
 
 
 def upload_file(file_name, bucket, object_name=None):
