@@ -128,3 +128,6 @@ if __name__ == '__main__':
                     result = get_table_pd_results(response)
                     a = pandizer(result)
                     dumpDict2csv(a, sourceFile, '../output/raw/InformeEpidemiologico/')
+
+        # put the output to s3
+        putOutputOnS3('../output', myS3)
