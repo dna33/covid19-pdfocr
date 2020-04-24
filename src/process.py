@@ -5,9 +5,11 @@ from os import listdir
 from pprint import pprint
 
 if __name__ == '__main__':
-    test = False
+    test = True
     myS3 = 'do-covid-19'
     if test:
+
+        upload_folder('../output', myS3)
 
         # jobId = '3256e214371aea597f64a056b4094fef1e612d5accb2bffdd19f3157eb2c11f8'
         # print("Started job with id: {}".format(jobId))
@@ -34,13 +36,11 @@ if __name__ == '__main__':
         #         a = pandizer(result)
         #         print(a)
 
-
-
-        reportePath = '../input/ReporteDiario/*.pdf'
-        rep = preparePathsForUpload(reportePath)
-        for eachrep in rep:
-            if not checkIfFileIsOnS3(myS3, eachrep[1]):
-                upload_file(eachrep[0], myS3, eachrep[1])
+        # reportePath = '../input/ReporteDiario/*.pdf'
+        # rep = preparePathsForUpload(reportePath)
+        # for eachrep in rep:
+        #     if not checkIfFileIsOnS3(myS3, eachrep[1]):
+        #         upload_file(eachrep[0], myS3, eachrep[1])
 
     else:
         # REPORTE DIARIO
@@ -129,5 +129,5 @@ if __name__ == '__main__':
                     a = pandizer(result)
                     dumpDict2csv(a, sourceFile, '../output/raw/InformeEpidemiologico/')
 
-        # put the output to s3
-        putOutputOnS3('../output', myS3)
+        # put the output on s3
+        upload_folder('../output', myS3)
