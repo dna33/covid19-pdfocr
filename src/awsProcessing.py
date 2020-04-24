@@ -42,12 +42,12 @@ def upload_file(file_name, bucket, object_name=None):
     s3_client = boto3.client('s3')
     try:
         #Check if file was already uploaded
-        response = s3_client.list_objects(Bucket='do-covid-19')
+        response = s3_client.list_objects(Bucket=bucket)
         for content in response.get('Contents', []):
             if object_name == content.get('Key'):
                 print(object_name + ' was already uploaded')
                 return
-        response = s3_client.upload_file(file_name, bucket, object_name)
+        myResponse = s3_client.upload_file(file_name, bucket, object_name)
 
     except ClientError as e:
         print(e)

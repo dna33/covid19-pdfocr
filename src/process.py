@@ -4,7 +4,8 @@ from postAwsProcessing import *
 from os import listdir
 
 if __name__ == '__main__':
-    test = True
+    test = False
+    myS3 = 'do-covid-19'
     if test:
         # jobId = '3256e214371aea597f64a056b4094fef1e612d5accb2bffdd19f3157eb2c11f8'
         # print("Started job with id: {}".format(jobId))
@@ -15,7 +16,7 @@ if __name__ == '__main__':
         #     a = pandizer(result)
         #     print(a)
 
-        myS3 = 'do-covid-19'
+
         reportePath = '../input/ReporteDiario/*.pdf'
         rep = preparePathsForUpload(reportePath)
         for eachrep in rep:
@@ -23,8 +24,6 @@ if __name__ == '__main__':
                 upload_file(eachrep[0], myS3, eachrep[1])
 
     else:
-        myS3 = 'do-covid-19'
-
         # REPORTE DIARIO
         obtenerReporteDiario('https://www.gob.cl/coronavirus/cifrasoficiales/', '../input/ReporteDiario/')
         reportePath = '../input/ReporteDiario/*.pdf'
@@ -34,13 +33,15 @@ if __name__ == '__main__':
         outputFiles = listdir('../output/raw/ReporteDiario')
 
         for eachrep in rep:
+            # Check if the file was uploaded
             if not checkIfFileIsOnS3(myS3, eachrep[1]):
                 upload_file(eachrep[0], myS3, eachrep[1])
 
+            # Check if the file was processed
             sourceFile = eachrep[1].split('/')[1].replace('.pdf', '')
-
             if [x for x in outputFiles if sourceFile in x]:
                 print(sourceFile + ' was already processed')
+
             else:
                 print('processing ' + sourceFile)
                 upload_file(eachrep[0], myS3, eachrep[1])
