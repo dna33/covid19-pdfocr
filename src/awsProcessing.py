@@ -2,7 +2,7 @@ import time
 import boto3
 import glob
 from botocore.exceptions import ClientError
-
+import os
 
 #PDF are processed asynchronously: files must be on S3
 
@@ -23,6 +23,15 @@ def checkIfFileIsOnS3(bucket, object_name):
     except ClientError as e:
         print(e)
         return False
+
+
+def upload_folder(path, bucketname):
+    for root, dirs, files in os.walk(path):
+        s3_client = boto3.client('s3')
+        for file in files:
+            s3path=os.path.join(root, file).replace('\\', '/').replace('../', '')
+            print('upload file ' + file + ' to ' + s3path)
+            s3_client.upload_file(os.path.join(root, file), bucketname, s3path)
 
 
 def upload_file(file_name, bucket, object_name=None):
@@ -60,7 +69,7 @@ def preparePathsForUpload(path):
     for file in glob.glob(path):
         filename = file.replace('\\', '/')
         s3path = filename.replace('../input/', '')
-        print('filename: ' + filename + ' and will be stored at s3://do-covid-19/' + s3path)
+        print('filename: ' + filename + ' will be stored at s3://do-covid-19/' + s3path)
         myList.append([filename, s3path])
     return myList
 
