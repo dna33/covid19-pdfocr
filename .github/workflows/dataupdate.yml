@@ -7,7 +7,7 @@ name: getNewPdfs
 on:
     push
     schedule:
-      - cron:  '* */1 * * *'
+      - cron:  '0 */1 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

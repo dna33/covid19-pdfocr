@@ -23,4 +23,5 @@ El flujo de procesamiento es:
  ## Por hacer
  
  Necesitamos procesar los csv que entrega amazon para que puedan ser consumidos por los scripts que generan los
- productos en el repo del MINCIENCIA
+ productos en el repo del [MINCIENCIA][https://github.com/MinCiencia/Datos-COVID19]
+ La idea es ayudar a construir una pipeline que permita consumir rapidamente los datos publicados por el MINSAL.
