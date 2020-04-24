@@ -61,8 +61,12 @@ if __name__ == '__main__':
         sit = preparePathsForUpload(situacionPath)
         outputFiles = listdir('../output/raw/InformeSituacionCOVID19')
         for eachsit in sit:
-            sourceFile = eachsit[1].split('/')[1].replace('.pdf', '')
+            # Check if the file was uploaded
+            if not checkIfFileIsOnS3(myS3, eachsit[1]):
+                upload_file(eachsit[0], myS3, eachsit[1])
 
+            # Check if the file was processed
+            sourceFile = eachsit[1].split('/')[1].replace('.pdf', '')
             if [x for x in outputFiles if sourceFile in x]:
                 print(sourceFile + ' was already processed')
             else:
@@ -85,8 +89,12 @@ if __name__ == '__main__':
         inf = preparePathsForUpload(infPath)
         outputFiles = listdir('../output/raw/InformeEpidemiologico')
         for eachinf in inf:
-            sourceFile = eachinf[1].split('/')[1].replace('.pdf', '')
+            # Check if the file was uploaded
+            if not checkIfFileIsOnS3(myS3, eachinf[1]):
+                upload_file(eachinf[0], myS3, eachinf[1])
 
+            # Check if the file was processed
+            sourceFile = eachinf[1].split('/')[1].replace('.pdf', '')
             if [x for x in outputFiles if sourceFile in x]:
                 print(sourceFile + ' was already processed')
             else:
