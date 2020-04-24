@@ -1,7 +1,5 @@
 import pandas as pd
-import boto3
-from botocore.exceptions import ClientError
-import glob
+
 
 TABLAS_REPORTE_DIARIO = {1: 'CasosConfirmadosNivelNacional', 2: 'ExamenesRealizadosNivelNacional',
                          3: 'HospitalizacionUCIRegion', 4: 'HospitalizacionUciEtario'}
@@ -101,25 +99,7 @@ def dumpDict2csv(dict, source, output):
         myfile.write(source + ' has no tables')
         myfile.close()
 
-def putOutputOnS3(path, bucket):
-    print('sync output from ' + path + ' to the bucket ' + bucket)
-    s3_client = boto3.client('s3')
-    outputFiles = glob.glob(path + '**/*.csv', recursive=True)
-    try:
-        # Check if file was already uploaded
-        response = s3_client.list_objects(Bucket=bucket)
-        for content in response.get('Contents', []):
-            for file in outputFiles:
-                print(outputFiles)
-        #     if object_name == content.get('Key'):
-        #         print(object_name + ' was already uploaded')
-        #         return
-        # myResponse = s3_client.upload_file(file_name, bucket, object_name)
 
-    except ClientError as e:
-        print(e)
-        return False
-    return True
 
 
 
