@@ -1,5 +1,5 @@
 import pandas as pd
-from pathlib import Path
+
 
 TABLAS_REPORTE_DIARIO = {1: 'CasosConfirmadosNivelNacional', 2: 'ExamenesRealizadosNivelNacional',
                          3: 'HospitalizacionUCIRegion', 4: 'HospitalizacionUciEtario'}

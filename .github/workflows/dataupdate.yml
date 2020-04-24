@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+
+name: getNewPdfs
+
+# Controls when the action will run. Triggers the workflow on push or pull request 
+# events but only for the master branch
+on:
+    push
+    schedule:
+      - cron:  '* */1 * * *'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  getPdfsToParse:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Sets up python
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+          python-version: 3.7
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+          aws-access-key-id: ${{ secrets.COVID_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.COVID_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+    # Runs a set of commands using the runners shell
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: get pdfs, parse and create a pr
+      run: cd src; python process.py
+
+    - uses: peter-evans/create-pull-request@v2
+      with:
+        commit_message: "Added new pdfs and csvs"
+        title: "Got new pdf files, please check all is good"
+        branch-suffix: timestamp
+        committer: seba github bot <actions@github.com>
+        reviewers: pdaire, fzmolina, raliaga, dna33, scornejo
+        base: integration
+
+
