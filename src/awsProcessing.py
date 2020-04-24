@@ -30,7 +30,6 @@ def checkForFileOnS3(bucketName, key):
     s3 = boto3.resource('s3')
     bucket = s3.Bucket(bucketName)
     objs = list(bucket.objects.filter(Prefix=key))
-    print('Checking if ' + key + ' is on ' + bucketName)
     if len(objs) > 0 and objs[0].key == key:
         return True
     else:
