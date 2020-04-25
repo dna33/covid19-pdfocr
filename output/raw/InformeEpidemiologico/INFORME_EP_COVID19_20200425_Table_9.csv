@@ -1,0 +1,18 @@
+,,,,,,,,,,Numerode,CasosNuevos,segun,semana,epidemiologica,,
+Comuna ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abril al 18 de abril) ,SE 17 (19 de abril al 25 de abril) 
+Andacollo ,11791 ,O ,0.0 ,O ,0.0 ,0 ,0.0 ,O ,0 ,O ,O ,0 ,0 ,O ,O ,O 
+Canela ,9546 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,0 ,O ,0 ,O ,O ,O ,O ,O ,O 
+Combarbala ,13884 ,0 ,0.0 ,O ,0.0 ,O ,0.0 ,0 ,O ,0 ,O ,0 ,O ,O ,O ,O 
+Coquimbo ,256735 ,24 ,9.3 ,3 ,1.2 ,3 ,1.2 ,O ,O ,4 ,13 ,3 ,1 ,0 ,2 ,1 
+Illape ,32801 ,18 ,54.9 ,O ,0.0 ,O ,0.0 ,O ,O ,O ,O ,4 ,7 ,7 ,O ,O 
+La Higuera ,4450 ,0 ,0.0 ,0 ,0.0 ,0 ,0.0 ,0 ,O ,0 ,0 ,0 ,0 ,O ,0 ,O 
+La Serena& ,249656 ,18 ,7.2 ,4 ,1.6 ,4 ,1.6 ,0 ,0 ,O ,3 ,7 ,4 ,O ,3 ,1 
+Los Vilos ,23374 ,1 ,4.3 ,O ,0.0 ,0 ,0.0 ,0 ,O ,O ,1 ,0 ,0 ,O ,0 ,O 
+Monte Patria ,32527 ,O ,0.0 ,O ,0.0 ,0 ,0.0 ,0 ,O ,O ,O ,0 ,0 ,O ,O ,O 
+Ovalle ,121269 ,9 ,7.4 ,0 ,0.0 ,O ,0.0 ,O ,0 ,2 ,2 ,4 ,1 ,O ,0 ,O 
+Paiguano ,4675 ,0 ,0.0 ,O ,0.0 ,0 ,0.0 ,0 ,0 ,O ,O ,0 ,O ,O ,0 ,O 
+Punitaqui& ,12165 ,1 ,8.2 ,1 ,8.2 ,1 ,8.2 ,O ,O ,O ,O ,O ,O ,O ,1 ,O 
+Rio Hurtado ,4372 ,1 ,22.9 ,O ,0.0 ,0 ,0.0 ,0 ,O ,O ,1 ,0 ,0 ,O ,O ,O 
+Salamanca ,29110 ,7 ,24.0 ,1 ,3.4 ,1 ,3.4 ,0 ,O ,0 ,1 ,2 ,1 ,2 ,1 ,O 
+Vicuna ,29741 ,0 ,0.0 ,O ,0.0 ,0 ,0.0 ,0 ,O ,O ,O ,0 ,0 ,O ,O ,O 
+Total ,836096 ,79 ,9.4 ,9 ,1.1 ,9 ,1.1 ,0 ,0 ,6 ,21 ,20 ,14 ,9 ,7 ,2 
