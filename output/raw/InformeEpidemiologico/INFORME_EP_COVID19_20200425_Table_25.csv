@@ -1,0 +1,15 @@
+,,,,,,,,,,Numerode,CasosNuevos,segun,semana,epidemiologica,,
+Comuna ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE 9 (23 al 29 de febrero) ,SE 10 (1 al 7 de marzo) ,SE 11 (8 al 14 de marzo) ,SE 12 (15 al 21 de marzo) ,SE 13 (22 al 28 de marzo) ,SE 14 (29 de marzo al 4 de abril) ,SE 15 (5 de abril al 11 de abril) ,SE 16 (12 de abri al 18 de abril) ,SE 17 (19 de abril al 25 de abril) 
+Corral ,5447 ,1 ,18.4 ,1 ,18.4 ,1 ,18.4 ,O ,0 ,0 ,0 ,0 ,O ,O ,1 ,O 
+Futrono ,15261 ,5 ,32.8 ,0 ,0.0 ,O ,0.0 ,O ,0 ,O ,1 ,3 ,1 ,O ,O ,O 
+La Union& ,39538 ,27 ,68.3 ,6 ,15.2 ,5 ,12.6 ,0 ,0 ,1 ,4 ,7 ,5 ,5 ,5 ,O 
+Lago Ranco ,10292 ,2 ,19.4 ,O ,0.0 ,O ,0.0 ,O ,0 ,0 ,1 ,1 ,0 ,O ,O ,O 
+Lanco& ,17652 ,5 ,28.3 ,1 ,5.7 ,1 ,5.7 ,O ,0 ,O ,O ,1 ,2 ,1 ,1 ,O 
+Los Lagos ,20518 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,O ,0 ,O ,0 ,0 ,0 ,O ,0 ,0 
+Mafil& ,7389 ,2 ,27.1 ,1 ,13.5 ,1 ,13.5 ,O ,0 ,O ,1 ,0 ,O ,O ,1 ,O 
+Mariquina ,23250 ,9 ,38.7 ,O ,0.0 ,O ,0.0 ,0 ,0 ,O ,3 ,1 ,4 ,1 ,O ,O 
+Paillaco& ,20798 ,2 ,9.6 ,O ,0.0 ,O ,0.0 ,0 ,0 ,O ,1 ,0 ,1 ,O ,O ,O 
+Panguipulli& ,35991 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,0 ,0 ,O ,0 ,0 ,O ,O ,0 ,O 
+Rio Bueno& ,32925 ,10 ,30.4 ,1 ,3.0 ,1 ,3.0 ,0 ,0 ,O ,3 ,1 ,4 ,1 ,1 ,O 
+Valdivia8 ,176774 ,105 ,59.4 ,8 ,4.5 ,8 ,4.5 ,0 ,2 ,1 ,27 ,33 ,23 ,14 ,5 ,O 
+Total ,405835 ,168 ,41.4 ,18 ,4.4 ,17 ,4.2 ,0 ,2 ,2 ,41 ,47 ,40 ,22 ,14 ,0 
