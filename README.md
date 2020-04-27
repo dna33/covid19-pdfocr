@@ -1,3 +1,5 @@
+[![Únete al chat en https://gitter.im/Data-Observatory/covid19-data](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Data-Observatory/covid19-data?utm_source=badge&utm_medium=badge&utm_content=badge)
+
 # Analizador de pdf de MINSAL basado en AWS Textract
 
 El objetivo de este proyecto es procesar rapidamente la información provista por MINSAL en pdfs.
