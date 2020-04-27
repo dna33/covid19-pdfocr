@@ -1,0 +1,19 @@
+Region,Poblacion,Nodecasos,confirmados,Tasaincidenciaacumulada,Tasamortalidadacumulada,Tasaletalidad
+,,Acumulados ,Fallecidos ,,,
+Arica y Parinacota ,252110 ,252 ,3 ,100.0 ,1.2 ,1.2 
+Tarapaca ,382773 ,156 ,1 ,40.8 ,0.3 ,0.6 
+Antofagasta ,691854 ,443 ,4 ,64.0 ,0.6 ,0.9 
+Atacama ,314709 ,29 ,O ,9.2 ,0.0 ,0.0 
+Coquimbo ,836096 ,73 ,O ,8.7 ,0.0 ,0.0 
+Valparaiso ,1960170 ,460 ,9 ,23.5 ,0.5 ,2.0 
+Metropolitana ,8125072 ,7496 ,91 ,92.3 ,1.1 ,1.2 
+O'Higgins ,991063 ,92 ,1 ,9.3 ,0.1 ,1.1 
+Maule ,1131939 ,354 ,11 ,31.3 ,1.0 ,3.1 
+Nuble ,511551 ,731 ,14 ,142.9 ,2.7 ,1.9 
+Biobio ,1663696 ,703 ,6 ,42.3 ,0.4 ,0.9 
+Araucania ,1014343 ,1216 ,29 ,119.9 ,2.9 ,2.4 
+LOs Rios ,405835 ,178 ,3 ,43.9 ,0.7 ,1.7 
+Los Lagos ,891440 ,473 ,8 ,53.1 ,0.9 ,1.7 
+Aisen ,107297 ,7 ,O ,6.5 ,0.0 ,0.0 
+Magallanes ,178362 ,668 ,9 ,374.5 ,5.0 ,1.3 
+Total pais ,19458310 ,13331 ,189 ,68.5 ,1.0 ,1.4 
