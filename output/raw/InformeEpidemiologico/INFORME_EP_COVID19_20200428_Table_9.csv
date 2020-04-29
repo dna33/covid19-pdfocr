@@ -1,0 +1,18 @@
+,,,,,,NumerodeCasos,segunFecha,deIniciode,Sintomas
+Comuna ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE SE SE 9 10 11 ,SE SE SE 12 13 14 
+Andacollo ,11791 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,O 0 O ,O 0 O 
+Canela ,9546 ,O ,0.0 ,O ,0.0 ,O ,0.0 ,O O O ,O O O 
+Combarbala ,13884 ,O ,0.0 ,O ,0.0 ,O ,0.0 ,O O O ,O O 0 
+Coquimbo ,256735 ,26 ,10.1 ,4 ,1.6 ,4 ,1.6 ,O O 4 ,13 3 1 
+Illapel ,32801 ,18 ,54.9 ,O ,0.0 ,O ,0.0 ,O O O ,O 4 7 
+La Higuera ,4450 ,O ,0.0 ,O ,0.0 ,O ,0.0 ,O O O ,O O O 
+La Serena ,249656 ,19 ,7.6 ,5 ,2.0 ,5 ,2.0 ,0 O O ,3 7 4 
+Los Vilos ,23374 ,1 ,4.3 ,O ,0.0 ,O ,0.0 ,0 O O ,1 O O 
+Monte Patria ,32527 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,O O O ,O O O 
+Ovalle ,121269 ,9 ,7.4 ,0 ,0.0 ,O ,0.0 ,O O 2 ,2 4 1 
+Paiguano ,4675 ,O ,0.0 ,O ,0.0 ,O ,0.0 ,O O O ,O O O 
+Punitaqui ,12165 ,1 ,8.2 ,1 ,8.2 ,1 ,8.2 ,O O O ,O O O 
+Rio Hurtado ,4372 ,1 ,22.9 ,0 ,0.0 ,O ,0.0 ,0 O O ,1 O O 
+Salamanca ,29110 ,7 ,24.0 ,1 ,3.4 ,1 ,3.4 ,O O O ,1 2 1 
+Vicuna ,29741 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,0 O O ,O 0 O 
+Total ,836096 ,82 ,9.8 ,11 ,1.3 ,11 ,1.3 ,0 0 6 ,21 20 14 
