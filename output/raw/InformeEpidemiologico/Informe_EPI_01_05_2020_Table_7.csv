@@ -1,0 +1,12 @@
+,,,,,,NumerodeCasos,segunFecha,deIniciodeSintomas,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE SE SE SE SE SE SE 9 10 11 12 13 14 15 ,SE SE SE 16 17 18 
+Antofagasta& ,425725 ,378 ,88.8 ,158 ,37.1 ,158 ,37.1 ,O 1 2 28 31 36 54 ,99 112 15 
+Calama ,190336 ,71 ,37.3 ,34 ,17.9 ,33 ,17.3 ,1 O 2 3 1 7 13 ,15 26 3 
+Maria Elena ,6814 ,30 ,440.3 ,24 ,352.2 ,24 ,352.2 ,O O O O O O 4 ,4 14 8 
+Mejillones ,14776 ,77 ,521.1 ,37 ,250.4 ,37 ,250.4 ,O O O O 1 8 15 ,18 29 6 
+Ollague ,287 ,O ,0.0 ,O ,0.0 ,O ,0.0 ,O O O 0 O 0 O ,O 0 0 
+San Pedro de Atacama ,10434 ,4 ,38.3 ,O ,0.0 ,0 ,0.0 ,O O O 2 1 1 O ,O O O 
+Sierra Gorda ,1746 ,O ,0.0 ,O ,0.0 ,O ,0.0 ,O O O O O O O ,O O O 
+Taltal ,13657 ,7 ,51.3 ,O ,0.0 ,O ,0.0 ,O O O O 0 2 3 ,2 O O 
+Tocopilla ,28079 ,12 ,42.7 ,1 ,3.6 ,1 ,3.6 ,O O O 2 0 4 5 ,O O 1 
+Total ,691854 ,579 ,83.7 ,254 ,36.7 ,253 ,36.6 ,1 1 4 35 34 58 94 ,138 181 33 
