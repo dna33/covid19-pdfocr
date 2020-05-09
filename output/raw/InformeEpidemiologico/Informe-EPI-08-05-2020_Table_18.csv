@@ -1,0 +1,23 @@
+,,,,,,NumerodeCasos,segunFecha,deIniciode,Sintomas,
+Region ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE SE SE 9 10 11 ,SE SE SE SE SE 12 13 14 15 16 ,SE SE SE 17 18 19 
+Cauquenes ,44143 ,13 ,29.4 ,O ,0.0 ,O ,0.0 ,O O O ,O 2 3 1 5 ,2 O O 
+Chanco ,9331 ,3 ,32.2 ,O ,0.0 ,O ,0.0 ,0 O O ,O 1 O O 1 ,1 O O 
+Colbun ,22565 ,6 ,26.6 ,O ,0.0 ,O ,0.0 ,O O O ,O 3 3 O O ,O O O 
+Constitucion ,50348 ,23 ,45.7 ,3 ,6.0 ,3 ,6.0 ,O O O ,O 3 3 5 7 ,4 1 O 
+Curepto ,9426 ,8 ,84.9 ,O ,0.0 ,O ,0.0 ,0 O O ,O O 3 2 3 ,0 O O 
+Curico8 ,163626 ,51 ,31.2 ,8 ,4.9 ,8 ,4.9 ,O 1 2 ,3 6 3 12 9 ,9 5 1 
+Empedrado ,4206 ,0 ,0.0 ,O ,0.0 ,O ,0.0 ,O O O ,O O O O O ,O O O 
+Hualane ,10222 ,O ,0.0 ,0 ,0.0 ,O ,0.0 ,0 O O ,O O O O O ,O O O 
+Licanten ,6989 ,2 ,28.6 ,0 ,0.0 ,O ,0.0 ,0 O O ,O 0 1 O 1 ,O O O 
+Linares ,101073 ,31 ,30.7 ,6 ,5.9 ,6 ,5.9 ,1 O O ,2 5 5 4 6 ,3 4 1 
+Longavi ,32810 ,6 ,18.3 ,2 ,6.1 ,2 ,6.1 ,O O O ,1 O 1 1 1 ,O 1 1 
+Maule& ,60000 ,24 ,40.0 ,2 ,3.3 ,2 ,3.3 ,O O O ,1 1 2 5 12 ,2 O 1 
+Molina ,49800 ,8 ,16.1 ,1 ,2.0 ,1 ,2.0 ,O O O ,1 2 O 1 3 ,0 O 1 
+Parral ,44544 ,9 ,20.2 ,0 ,0.0 ,0 ,0.0 ,0 O O ,1 3 2 2 1 ,0 O O 
+Pelarco ,9083 ,6 ,66.1 ,1 ,11.0 ,1 ,11.0 ,O O O ,O O O 3 2 ,O 1 0 
+Pelluhue ,8092 ,2 ,24.7 ,0 ,0.0 ,O ,0.0 ,0 O O ,1 O O 1 O ,O O O 
+Pencahue ,8601 ,3 ,34.9 ,0 ,0.0 ,O ,0.0 ,0 O O ,O O O O 3 ,O O O 
+Rauco ,11248 ,2 ,17.8 ,O ,0.0 ,O ,0.0 ,0 O O ,O 1 1 O O ,O 0 O 
+Retiro ,21071 ,2 ,9.5 ,1 ,4.7 ,1 ,4.7 ,0 O O ,O 0 O 1 O ,O 1 0 
+Rio Claro ,14753 ,9 ,61.0 ,1 ,6.8 ,1 ,6.8 ,0 O O ,2 0 1 1 3 ,2 O O 
+Romeral ,16170 ,13 ,80.4 ,0 ,0.0 ,0 ,0.0 ,0 0 O ,1 2 O O 10 ,O 0 0 
