@@ -68,11 +68,18 @@ if __name__ == '__main__':
                 myfile = open("jobs.log", 'a+')
                 myfile.write(eachrep[1] + ': ' + jobId + '\n')
                 myfile.close()
-                if (isJobComplete(jobId)):
+                if (isJobComplete(jobId)) and isJobComplete(jobId) == 'SUCCESS':
                     response = getJobResults(jobId)
                     result = get_table_pd_results(response)
                     a = pandizer(result)
                     dumpDict2csv(a, sourceFile, '../output/raw/ReporteDiario/')
+                else:
+                    message = 'job ' + jobId + ' for  file ' + eachrep[1] + ' failed'
+                    print(message)
+                    filename = '../output/raw/ReporteDiario/' + sourceFile + '_ERROR.csv'
+                    myfile = open(filename, 'a+')
+                    myfile.write('Error: ' + message)
+                    myfile.close()
 
         # INFORME SITUACION
         obtenerSituacionCOVID19('http://epi.minsal.cl/informes-covid-19/', '../input/InformeSituacionCOVID19/')

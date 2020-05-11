@@ -6,31 +6,25 @@ import os
 
 #PDF are processed asynchronously: files must be on S3
 
-
-# def checkIfFileIsOnS3(bucket, object_name):
-#     s3_client = boto3.client('s3')
-#     try:
-#         print('Checking if ' + object_name + ' is on ' + bucket)
-#         #Check if file was already uploaded
-#
-#         response = s3_client.list_objects(Bucket=bucket)
-#         for content in response.get('Contents', []):
-#             print(content)
-#             if object_name == content.get('Key'):
-#                 print(object_name + ' was already uploaded')
-#                 return True
-#             else:
-#                 return False
-#     except ClientError as e:
-#         print(e)
-#         return False
-
-
+## This implementation is suboptial as we query s3 for each file.
 def checkForFileOnS3(bucketName, key):
     s3 = boto3.resource('s3')
     bucket = s3.Bucket(bucketName)
     objs = list(bucket.objects.filter(Prefix=key))
     if len(objs) > 0 and objs[0].key == key:
+        return True
+    else:
+        return False
+
+
+def getListOfFilesOnS3(bucketName):
+    s3 = boto3.resource('s3')
+    bucket = s3.Bucket(bucketName)
+    objs = list(bucket.objects.filter(Prefix=key))
+    return objs
+
+def checkForFileOnS3Locally(listOfFiles, file):
+    if len(listOfFiles) > 0 and listOfFiles[0].key == file:
         return True
     else:
         return False
