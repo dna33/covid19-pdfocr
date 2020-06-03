@@ -9,7 +9,7 @@ on:
         branches:
             - master
     schedule:
-        - cron: '0/30 * * * *'
+        - cron: '*/15 * * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -45,13 +45,18 @@ jobs:
     - name: get pdfs, parse and create a pr
       run: cd src; python process.py
 
-    - uses: peter-evans/create-pull-request@v2
+
+    - uses: stefanzweifel/git-auto-commit-action@v4.1.1
       with:
-        commit_message: "Added new pdfs and csvs"
-        title: "Got new pdf files, please check all is good"
-        branch-suffix: timestamp
-        committer: seba github bot <actions@github.com>
-        reviewers: pdaire, fzmolina, raliaga, dna33, scornejo
-        base: master
+        commit_message: "Added data to repo"
+
+        # Optional local file path to the repository
+        repository: .
+
+        # Optional commit user and author settings
+        commit_user_name: DataObservatory GitHub Actions Bot
+        commit_user_email: actions@github.com
+        commit_author: DataObservatory GitHub bot <actions@github.com>
+
 
 
