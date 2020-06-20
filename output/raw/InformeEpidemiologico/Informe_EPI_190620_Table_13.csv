@@ -1,0 +1,19 @@
+,,,,,,Numerode,CasossegunFecha,deInicio,deSintomas.,NotificacionOTomadeMuestra,,,,,
+Comuna ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Fallecidos ,Tasa de Mortalidad ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE SE SE SE SE SE SE 9 10 11 12 13 14 15 ,SE SE SE SE 16 17 18 19 ,SE 20 ,SE SE 21 22 ,SE SE 23 24 ,SE 25 
+Andacollo ,11791 ,26 ,220.5 ,1 ,8.5 ,0 ,0.0 ,0 ,0.0 ,0 0 O 0 0 O O ,O 0 2 7 ,3 ,3 6 ,5 0 ,O 
+Canela ,9546 ,6 ,62.9 ,0 ,0.0 ,1 ,10.5 ,1 ,10.5 ,0 0 0 0 0 O 0 ,O 0 1 O ,2 ,O 1 ,2 0 ,O 
+Combarbala ,13884 ,28 ,201.7 ,0 ,0.0 ,8 ,57.6 ,8 ,57.6 ,0 0 O 0 0 O 0 ,O 0 2 3 ,4 ,3 5 ,3 2 ,6 
+Coquimbo8 ,256735 ,688 ,268.0 ,4 ,1.6 ,177 ,68.9 ,177 ,68.9 ,O 0 4 13 3 1 1 ,4 7 16 78 ,81 ,61 139 ,135 112 ,33 
+Illapel ,32801 ,72 ,219.5 ,0 ,0.0 ,21 ,64.0 ,21 ,64.0 ,0 0 0 0 4 7 7 ,0 0 1 O ,1 ,4 19 ,14 11 ,4 
+La Higuera ,4450 ,5 ,112.4 ,O ,0.0 ,2 ,44.9 ,2 ,44.9 ,0 0 O 0 0 0 0 ,O 0 O O ,O ,0 1 ,2 1 ,1 
+La Serena& ,249656 ,543 ,217.5 ,2 ,0.8 ,175 ,70.1 ,175 ,70.1 ,O 0 O 3 6 4 2 ,3 5 13 50 ,47 ,66 97 ,108 92 ,47 
+LOs Vilos ,23374 ,19 ,81.3 ,0 ,0.0 ,7 ,29.9 ,7 ,29.9 ,0 0 0 1 0 O 0 ,O 0 O 1 ,O ,3 4 ,5 5 ,0 
+Monte Patria ,32527 ,126 ,387.4 ,1 ,3.1 ,40 ,123.0 ,40 ,123.0 ,0 O O O 0 O 0 ,0 0 1 6 ,18 ,25 24 ,22 24 ,6 
+Ovalle& ,121269 ,588 ,484.9 ,6 ,4.9 ,204 ,168.2 ,203 ,167.4 ,O O 2 2 4 2 0 ,5 1 13 25 ,43 ,56 113 ,159 140 ,23 
+Paiguano ,4675 ,9 ,192.5 ,0 ,0.0 ,4 ,85.6 ,4 ,85.6 ,0 0 O O 0 O 0 ,O 0 O O ,O ,2 2 ,1 4 ,0 
+Punitaqui ,12165 ,38 ,312.4 ,2 ,16.4 ,7 ,57.5 ,7 ,57.5 ,0 O O 0 0 O 0 ,1 1 3 6 ,O ,4 14 ,2 6 ,1 
+Rio Hurtado ,4372 ,16 ,366.0 ,0 ,0.0 ,3 ,68.6 ,3 ,68.6 ,O O O 1 O O 0 ,O O 1 O ,O ,2 5 ,6 1 ,O 
+Salamanca ,29110 ,49 ,168.3 ,O ,0.0 ,7 ,24.0 ,7 ,24.0 ,O O O 1 2 1 2 ,1 O 3 2 ,2 ,5 14 ,13 3 ,O 
+Vicuna ,29741 ,27 ,90.8 ,O ,0.0 ,2 ,6.7 ,2 ,6.7 ,0 0 0 0 0 O 0 ,0 1 3 5 ,3 ,4 4 ,7 0 ,0 
+Desconocido ,- ,112 ,- ,0 ,-- ,73 ,- ,73 ,- ,O 0 O 0 0 1 0 ,1 1 3 2 ,4 ,9 10 ,11 48 ,22 
+Total ,836096 ,2352 ,281.3 ,16 ,1.9 ,731 ,87.4 ,730 ,87.3 ,0 0 6 21 19 16 12 ,15 16 62 185 ,208 ,247 458 ,495 449 ,143 
