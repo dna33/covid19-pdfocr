@@ -1,0 +1,13 @@
+,,,,,,,,Numero,deCasos,segunFechadeIniciode,Sintomas.,Notificaciono,Tomade,Muestra,,,
+Comuna ,Poblacion ,Numero de Casos Confirmados ,Tasa incidencia acumulada ,Numero de Fallecidos ,Tasa de Mortalidad ,Numero de Casos Actuales ,Tasa de Incidencia Actual ,Numero de Casos Activos ,Tasa de Incidencia Activos ,SE SE SE SE SE SE 9 10 11 12 13 14 ,SE SE 15 16 ,SE 17 ,SE SE 18 19 ,SE SE 20 21 ,SE 22 ,SE SE 23 24 ,SE SE 25 26 
+Antofagasta& ,425725 ,3187 ,748.6 ,32 ,7.5 ,647 ,152.0 ,646 ,151.7 ,O 1 2 28 31 41 ,59 109 ,160 ,216 312 ,312 304 ,351 ,477 505 ,277 2 
+Calama& ,190336 ,3095 ,1626.1 ,56 ,29.4 ,984 ,517.0 ,978 ,513.8 ,1 0 2 3 2 10 ,16 16 ,38 ,53 91 ,235 280 ,435 ,748 786 ,373 6 
+Maria Elena& ,6814 ,208 ,3052.5 ,4 ,58.7 ,21 ,308.2 ,21 ,308.2 ,1 O 0 0 0 1 ,5 9 ,16 ,47 39 ,30 13 ,12 ,11 6 ,18 0 
+Mejillones& ,14776 ,316 ,2138.6 ,4 ,27.1 ,22 ,148.9 ,22 ,148.9 ,0 0 0 O 1 8 ,15 18 ,30 ,76 45 ,51 19 ,19 ,9 13 ,12 0 
+Ollague ,287 ,2 ,696.9 ,O ,0.0 ,2 ,696.9 ,2 ,696.9 ,O O O 0 0 O ,O O ,O ,O O ,O O ,0 ,O 2 ,O O 
+San Pedro de Atacama& ,10434 ,63 ,603.8 ,1 ,9.6 ,29 ,277.9 ,29 ,277.9 ,0 0 0 2 1 1 ,O O ,1 ,0 0 ,1 4 ,3 ,18 18 ,14 0 
+Sierra Gorda& ,1746 ,47 ,2691.9 ,0 ,0.0 ,5 ,286.4 ,5 ,286.4 ,O 0 0 0 0 0 ,0 0 ,0 ,3 5 ,5 3 ,16 ,7 8 ,0 0 
+Taltal ,13657 ,62 ,454.0 ,0 ,0.0 ,15 ,109.8 ,15 ,109.8 ,O 0 0 0 0 2 ,3 2 ,1 ,1 4 ,11 6 ,9 ,8 8 ,7 0 
+Tocopilla ,28079 ,76 ,270.7 ,2 ,7.1 ,28 ,99.7 ,28 ,99.7 ,O O O 2 O 4 ,5 O ,1 ,2 7 ,8 8 ,4 ,5 16 ,14 O 
+Desconocido& ,- ,116 ,- ,O ,- ,103 ,- ,103 ,- ,O O O O O O ,0 O ,5 ,O 1 ,1 O ,O ,5 12 ,89 3 
+Total ,691854 ,7172 ,1036.6 ,99 ,14.3 ,1856 ,268.3 ,1849 ,267.3 ,2 1 4 35 35 67 ,103 154 ,252 ,398 504 ,654 637 ,849 ,1288 1374 ,804 11 
