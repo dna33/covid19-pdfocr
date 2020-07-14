@@ -1,0 +1,22 @@
+Comuna,,Poblacion,NumerodeCasosConfirmados,Tasaincidenciaacumulada,NumerodeFallecidos,TasadeMortalidad,NumerodeCasosActuales,TasadeIncidenciaActual
+Antofagasta ,& ,425725 ,5697 ,1338.2 ,86 ,20.2 ,1072 ,251.8 
+Calama ,& ,190336 ,5450 ,2863.4 ,149 ,78.3 ,731 ,384.1 
+Maria Elena ,& ,6814 ,291 ,4270.6 ,9 ,132.1 ,28 ,410.9 
+Mejillones ,,14776 ,431 ,2916.9 ,4 ,27.1 ,28 ,189.5 
+Ollague ,,287 ,12 ,4181.2 ,0 ,0.0 ,4 ,1393.7 
+San Pedro de Atacama ,,10434 ,172 ,1648.5 ,4 ,38.3 ,40 ,383.4 
+Sierra Gorda ,,1746 ,56 ,3207.3 ,0 ,0.0 ,6 ,343.6 
+Taltal ,& ,13657 ,99 ,724.9 ,2 ,14.6 ,22 ,161.1 
+Tocopilla ,,28079 ,241 ,858.3 ,5 ,17.8 ,49 ,174.5 
+Desconocido ,& ,- ,152 ,- ,0 ,- ,57 ,- 
+Total ,,691854 ,12601 ,1821.3 ,259 ,37.4 ,2037 ,294.4 
+,,,,,,,,
+,,SE SE SE SE ,SE SE SE ,SE SE SE ,SE SE SE ,SE SE ,SE SE ,SE SE 
+Comuna ,,9 10 11 12 ,13 14 15 ,16 17 18 ,19 20 21 ,22 23 ,24 25 ,26 27 
+Antofagasta ,& ,O 1 2 28 ,31 41 60 ,110 161 215 ,313 313 304 ,353 501 ,603 704 ,772 827 
+Calama ,& ,1 O 2 3 ,3 9 18 ,17 40 54 ,93 235 285 ,444 814 ,994 910 ,720 589 
+Maria Elena ,& ,1 O O O ,O O 5 ,9 16 45 ,42 30 13 ,12 11 ,7 41 ,29 28 
+Mejillones ,,O O O O ,1 8 15 ,18 30 76 ,45 51 19 ,19 10 ,17 38 ,49 25 
+Ollague ,,0 O 0 O ,0 O 0 ,0 0 O ,O O 0 ,0 0 ,2 5 ,1 2 
+San Pedro de Atacama ,,0 0 0 2 ,1 1 0 ,0 1 0 ,O 2 4 ,4 18 ,21 33 ,35 35 
+Sierra Gorda ,,O O O 0 ,O O O ,0 O 3 ,5 5 3 ,12 6 ,8 3 ,4 2 

@@ -1,0 +1,20 @@
+,,,CasosAcumulados,,,Casos,Tasaincidencia,Tasamortalidad,Tasa
+Zona de Chile ,Poblacion ,Confirmados Notificados ,Confirmados No Notificados ,Probables ,Total ,Fallecidos ,acumulada ,acumulada ,Letalidad 
+Region de Arica y Parinacota ,252110 ,2558 ,3 ,118 ,2679 ,28 ,1062.6 ,11.1 ,1.0% 
+Region de Tarapaca ,382773 ,6911 ,322 ,208 ,7441 ,127 ,1944.0 ,33.2 ,1.7% 
+Region de Antofagasta ,691854 ,11794 ,153 ,592 ,12539 ,261 ,1812.4 ,37.7 ,2.1% 
+Region de Atacama ,314709 ,1609 ,12 ,41 ,1662 ,8 ,528.1 ,2.5 ,0.5% 
+Region de Coquimbo ,836096 ,4018 ,158 ,518 ,4694 ,41 ,561.4 ,4.9 ,0.9% 
+Region de Valparaiso ,1960170 ,14170 ,403 ,4670 ,19243 ,389 ,981.7 ,19.8 ,2.0% 
+Region Metropolitana de Santiago ,8125072 ,220957 ,18899 ,28529 ,268385 ,6891 ,3303.2 ,84.8 ,2.6% 
+Region del Libertador General Bernardo O'Higgins ,991063 ,8462 ,97 ,1625 ,10184 ,140 ,1027.6 ,14.1 ,1.4% 
+Region de Maule ,1131939 ,7086 ,43 ,624 ,7753 ,113 ,684.9 ,10.0 ,1.5% 
+Region del Nuble ,511551 ,2975 ,2 ,665 ,3642 ,51 ,712.0 ,10.0 ,1.4% 
+Region de Biobio ,1663696 ,8458 ,146 ,1154 ,9758 ,84 ,586.5 ,5.0 ,0.9% 
+Region de la Araucania ,1014343 ,3583 ,9 ,54 ,3646 ,68 ,359.4 ,6.7 ,1.9% 
+Region de LOs Rios ,405835 ,764 ,6 ,17 ,787 ,11 ,193.9 ,2.7 ,1.4% 
+Region de Los Lagos ,891440 ,2331 ,35 ,208 ,2574 ,26 ,288.7 ,2.9 ,1.0% 
+Region de Aysen del General Carlos lbanez del Campo ,107297 ,58 ,0 ,0 ,58 ,0 ,54.1 ,0.0 ,0.0% 
+Region de Magallanes y la Antartica Chilena ,178362 ,1492 ,70 ,15 ,1577 ,26 ,884.2 ,14.6 ,1.6% 
+Desconocida ,- ,0 ,73 ,0 ,73 ,0 ,- ,- ,0.0% 
+Total pais ,19458310 ,297226 ,20431 ,39038 ,356695 ,8264 ,1833.1 ,42.5 ,2.3% 

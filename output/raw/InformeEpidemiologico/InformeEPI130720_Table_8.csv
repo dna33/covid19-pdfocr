@@ -1,0 +1,16 @@
+Comuna,Poblacion,NumerodeCasosConfirmados,Tasaincidenciaacumulada,NumerodeFallecidos,TasadeMortalidad,NumerodeCasosActuales,TasadeIncidenciaActual
+,& 247552 ,2721 ,1099.2 ,29 ,11.7 ,657 ,265.4 
+Camarones ,1233 ,8 ,648.8 ,O ,0.0 ,8 ,648.8 
+General Lagos ,810 ,O ,0.0 ,O ,0.0 ,O ,0.0 
+,2515 ,28 ,1113.3 ,O ,0.0 ,17 ,675.9 
+Desconocido ,& - ,3 ,- ,O ,- ,1 ,- 
+,252110 ,2760 ,1094.8 ,29 ,11.5 ,683 ,270.9 
+,,,,,,,
+,SE SE SE ,SE SE SE SE ,SE SE SE ,SE SE SE ,SE SE ,SE SE ,SE SE 
+Comuna ,9 10 11 ,12 13 14 15 ,16 17 18 ,19 20 21 ,22 23 ,24 25 ,26 27 
+,& O 2 1 ,2 23 70 68 ,53 69 51 ,45 89 ,147 194 279 ,272 294 ,346 409 
+Camarones ,O O O ,O O O O ,O O O ,O 0 O ,O O ,0 O ,0 1 
+General Lagos ,0 O O ,0 0 O O ,O O 0 ,0 O O ,O O ,0 O ,0 0 
+Putre ,O O O ,0 0 0 O ,O O O ,O O ,O O 1 ,9 O ,1 6 
+Desconocido ,& O O O ,O O O 1 ,O O O ,O O ,1 O O ,O O ,O O 
+,0 2 1 ,2 23 70 69 ,53 69 51 ,45 89 ,148 194 280 ,281 294 ,347 416 
