@@ -1,0 +1,5 @@
+CodificaciondecausabasicasoloconCertificadoMedicodeDefuncion,Mejoraespecificidaddelasdefuncionesalutilizarfuenteexterna
+Covid19 - Sospechoso O probable ,"-> ""Covid19 - Confirmado"" al disponer de un PCR Positivo "
+Covid19 - Confirmada ,"""Covid19 - Sospechoso O probable"". al disponer de un PCR Negativo "
+Enfermedad Respiratoria ,"-> ""Covid19 - Confirmado"" al disponer de un PCR Positivo "
+Alguna enfermedad respiratoria u otras causes (se excluyen causas externas O materna) ,"-> ""Covid19 - Sospechoso"" al estar catalogado como caso ""Probable"" en Epivigila "
