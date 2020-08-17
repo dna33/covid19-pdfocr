@@ -1,0 +1,13 @@
+INFORMEEPIDEMIOLOGICOCOVID-1914-08-2020
+""
+Region de notificacion (ocurrencia): corresponde a la region donde el caso fue atendido y notificado 
+Region y comuna de residencia: region y comuna que el caso declara como su vivienda habitual 
+Region de toma de muestra: region donde se obtuvo una muestra del caso para su analisis por laboratorio 
+Casos con region 0 comuna de residencia desconocida: corresponden a los casos en que no se registro la region de vivienda habitual en la notificacion O en los registros de laboratorio 0 bien son casos con domicilio en el extranjero 
+Casos actuales: personas confirmadas cuya fecha de inicio de sintomas. de notificacion O de toma de muestra es menor O igual a 14 dias a la fecha del reporte actual (considera casos 
+vivos y fallecidos) Casos activos: personas vivas confirmadas con COVID-19 cuya fecha de inicio de sintomas. de notificacion O de toma de muestra es menor O igual a 14 dias a la fecha del reporte actual (considera solo casos vivos) Semana epidemiologica (SE): Consenso internacional sobre el periodo de tiempo estandar para agrupar los padecimientos 0 eventos epidemiologicos con el proposito de vigilancia epidemiologica Las SE comienzan en domingo y terminan en sabado. y pueden consultarse en Anexos Tasa de mortalidad: corresponde a la proporcion de personas con COVID-19 que fallecen con respecto al total de la poblacion Se expresa amplificada a 100000 habitantes Considera muertes debido a Covid-19 con y sin confirmacion de laboratorio (U071 U072. respectivamente) informadas por el Departamento de Estadisticas e Informacion en Salud 
+(DEIS) del MINSAL que estan debidamente notificadas en el sistema Epivigila Tasa de letalidad corresponde a la proporcion de personas con COVID-19 que fallecen en relacion con el total de personas que han contraido la enfermedad Se expresa como 
+porcentaje Considera muertes debido a Covid-19 confirmadas (U071) y no confirmadas (U072) informadas por el DEIS del MINSAL yque estan debidamente notificadas en el sistema Epivigila 
+Hospitalizacion: corresponde a las personas con COVID-19. que se hospitalizan con respecto al total de casos notificados (confirmados y probables) Se expresa como porcentaje Tambien puede expresarse como tasa cuando se calcula respecto al total de la poblacion. amplificada a 100000 habitantes 
+Casos fallecidos: personas que fallecieron en territorio nacional debido a COVID-19 informados por el DEIS y que se encuentran debidamente notificados en la plataforma Epivigila 
+Busqueda activa de casos: Estrategia de vigilancia epidemiologica basada en la busqueda dirigida y proactiva de potenciales casos en la comunidad 
