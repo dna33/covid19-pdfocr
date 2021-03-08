@@ -12,6 +12,7 @@ class padron:
         self.file = ''
         self.url =self.comunas[comuna]
 
+
     def load_file(self):
         print('Request processing for ' + self.comuna)
         r = requests.get(self.url, stream=True)
@@ -26,7 +27,7 @@ class padron:
 
 
     def get_info(self):
-        if os.path.exists(self.comuna+'_padron.pdf'):
+        if os.path.exists(self.comuna+'_padron.csv'):
             print('Tamos ready')
         else:
             doc = fitz.open(self.file)
@@ -83,7 +84,7 @@ class padron:
 
                 # print('End page')
 
-            padron_df = pandas.DataFrame(padron)
+            padron_df = pd.DataFrame(padron)
             padron_df.to_csv(self.comuna+'_padron.csv', index=False)
 
             print('End')
@@ -95,82 +96,59 @@ class mapa:
         self.url = url
         self.file = ''
         self.df_distrito = pd.DataFrame()
+        self.df = pd.DataFrame()
 
-    def load_file(self):
-        print('Request processing for ' + self.eleccion)
+    def load_xlsx(self):
+        print('XLSX processing for ' + self.eleccion)
         r = requests.get(self.url, stream=True)
         print(r.headers['content-length'])
         self.file = self.eleccion + '_resultados.xlsx'
         if os.path.exists(self.file):
-            if os.path.exists(self.eleccion+'_resultados_d10.csv'):
-                self.file = self.eleccion + '_resultados_d10.csv'
-                df = pd.read_csv(self.file)
-                self.df_distrito = df.loc[(df['Distrito'] == 10) | (df['Distrito'] == '10mo Distrito')]
-                self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv',index=False)
-                if self.eleccion == 'Presidenciales 2017':
-                    self.candidates = self.df_distrito[['Candidato']]
-                    self.candidates.drop_duplicates(inplace=True)
-                    self.candidates.reset_index(drop=True)
-                    self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
-                elif self.eleccion == 'Diputados 2017':
-                    self.candidates = self.df_distrito[['Pacto','Partido', 'Candidato']]
-                    self.candidates.drop_duplicates(inplace=True)
-                    self.candidates.reset_index(drop=True)
-                    self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
-                else:
-                    self.candidates = self.df_distrito[['Pacto', 'Sub Pacto','Partido', 'Candidato']]
-                    self.candidates.drop_duplicates(inplace=True)
-                    self.candidates.reset_index(drop=True)
-                    self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
-
+            self.file = self.eleccion + '_resultados_d10.csv'
+            if os.path.exists(self.file):
+                print('tamos ready')
+                self.df = pd.read_csv(self.file)
             else:
                 t0 = time.time()
-                df = pd.read_excel(self.file)
+                self.df = pd.read_excel(self.eleccion + '_resultados.xlsx')
                 t1 = time.time()
                 print('Time to process ' + self.file + ' ' + str((t1 - t0) / 60) + ' minutos')
-                self.df_distrito = df.loc[(df['Distrito'] == 10) | (df['Circ.Senatorial'] == '7ma Cirscunscripción')]
-                self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
-                if self.eleccion == 'Presidenciales 2017':
-                    self.candidates = self.df_distrito[['Candidato']]
-                    self.candidates.drop_duplicates(inplace=True)
-                    self.candidates.reset_index(drop=True)
-                    self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
-                elif self.eleccion == 'Diputados 2017':
-                    self.candidates = self.df_distrito[['Pacto', 'Partido', 'Candidato']]
-                    self.candidates.drop_duplicates(inplace=True)
-                    self.candidates.reset_index(drop=True)
-                    self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
-                else:
-                    self.candidates = self.df_distrito[['Pacto', 'Sub Pacto', 'Partido', 'Candidato']]
-                    self.candidates.drop_duplicates(inplace=True)
-                    self.candidates.reset_index(drop=True)
-                    self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
 
         else:
             with open(self.file, 'wb') as fd:
                 for chunk in r.iter_content(int(int(r.headers['content-length'])/1000)):
                     fd.write(chunk)
             t0 = time.time()
-            df = pd.read_excel(self.file)
+            self.df = pd.read_excel(self.file)
             t1 = time.time()
             print('Time to process ' + self.file + ' ' + str((t1 - t0) / 60) + ' minutos')
-            self.df_distrito = df.loc[(df['Distrito'] == 10) | (df['Distrito'] == '10mo Distrito')]
+
+
+
+    def load_csv(self):
+        if self.eleccion == 'Presidenciales 2017':
+            self.df_distrito = self.df.loc[(self.df['Circ.Electoral'] == '7ma Circunscripción') and (self.df['Distrito'] == '10mo Distrito')]
             self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
-            if self.eleccion == 'Presidenciales 2017':
-                self.candidates = self.df_distrito[['Candidato']]
-                self.candidates.drop_duplicates(inplace=True)
-                self.candidates.reset_index(drop=True)
-                self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
-            elif self.eleccion == 'Diputados 2017':
-                self.candidates = self.df_distrito[['Pacto', 'Partido', 'Candidato']]
-                self.candidates.drop_duplicates(inplace=True)
-                self.candidates.reset_index(drop=True)
-                self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
-            else:
-                self.candidates = self.df_distrito[['Pacto', 'Sub Pacto', 'Partido', 'Candidato']]
-                self.candidates.drop_duplicates(inplace=True)
-                self.candidates.reset_index(drop=True)
-                self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
+            self.candidates = self.df_distrito[['Candidato']]
+            self.candidates.drop_duplicates(inplace=True)
+            self.candidates.reset_index(drop=True)
+            self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
+        elif self.eleccion == 'Diputados 2017':
+            self.df_distrito = self.df.loc[(self.df['Distrito'] == 10)]
+            self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
+            self.candidates = self.df_distrito[['Pacto','Partido', 'Candidato']]
+            self.candidates.drop_duplicates(inplace=True)
+            self.candidates.reset_index(drop=True)
+            self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
+        else:
+            self.df_distrito = self.df.loc[(self.df['Distrito'] == 10)]
+            self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
+            self.candidates = self.df_distrito[['Pacto', 'Sub Pacto','Partido', 'Candidato']]
+            self.candidates.drop_duplicates(inplace=True)
+            self.candidates.reset_index(drop=True)
+            self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
+
+
 
     def get_info(self):
         # crear probabilidad de voto
@@ -231,7 +209,8 @@ if __name__ == "__main__":
     }
     for ele in eleccion:
         mi_mapa=mapa(ele,eleccion[ele],afinidad_concejales)
-        mi_mapa.load_file()
-        mi_mapa.get_info()
+        mi_mapa.load_xlsx()
+        mi_mapa.load_csv()
+  #      mi_mapa.get_info()
         #mi_mapa.geolocalize()
         #mi_mapa.save()
