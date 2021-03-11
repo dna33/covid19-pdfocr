@@ -165,9 +165,9 @@ class resultados:
             columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
         elif self.eleccion == 'Concejales 2016 TER 2':
             columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
-        elif self.eleccion == 'Diputados 2016':
-            columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
-        elif self.eleccion == 'Presidenciales 2017':
+        elif self.eleccion == 'Diputados 2017':
+            columnas = ['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa','alcance']
+        else:
             columnas = ['Circunscripción', 'Mesa Nº', 'Tipo', 'alcance']
 
         self.df_alcance_mesa = self.df_distrito[columnas].groupby(['alcance']).sum
