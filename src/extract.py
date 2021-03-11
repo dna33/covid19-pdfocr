@@ -89,7 +89,7 @@ class padron:
 
             print('End')
 
-class mapa:
+class resultados:
     def __init__(self,eleccion,url,afinidad):
         self.eleccion = eleccion
         self.afinidad = afinidad
@@ -124,10 +124,10 @@ class mapa:
             print('Time to process ' + self.file + ' ' + str((t1 - t0) / 60) + ' minutos')
 
 
-
     def load_csv(self):
         if self.eleccion == 'Presidenciales 2017':
-            self.df_distrito = self.df.loc[(self.df['Circ.Electoral'] == '7ma Circunscripción') and (self.df['Distrito'] == '10mo Distrito')]
+            self.df_distrito = self.df.loc[self.df['Circ.Senatorial'] == '7a Circunscripción']
+            self.df_distrito = self.df_distrito.loc[self.df_distrito['Distrito'] == '10° Distrito']
             self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
             self.candidates = self.df_distrito[['Candidato']]
             self.candidates.drop_duplicates(inplace=True)
@@ -149,19 +149,28 @@ class mapa:
             self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
 
 
-
     def get_info(self):
         # crear probabilidad de voto
-        df_distrito = pd.read_csv(self.file)
-        df_distrito.rename(columns={
+        self.df_distrito.rename(columns={
             'Votos TER':'Votos',
             'Votos TRICEL':'Votos'
         },inplace=True)
-        df_distrito['alcance_estimado'] = df_distrito['Votos']
-        #for criterio in self.afinidad:
-        #    df.alcance_estimado = np.where(df.A.eq(criterio), df.votos*criterio.probabilidad, df.alcance_estimado)
+        self.df_distrito.rename(columns={
+            'Votos TER': 'Votos',
+            'Votos TRICEL': 'Votos'
+        }, inplace=True)
+        self.df_distrito['alcance'] = self.df_distrito['Votos']
 
-        #cruzar votacion por mesa, con el padron
+        if self.eleccion == 'Concejales 2016 TER 1':
+            columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
+        elif self.eleccion == 'Concejales 2016 TER 2':
+            columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
+        elif self.eleccion == 'Diputados 2016':
+            columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
+        elif self.eleccion == 'Presidenciales 2017':
+            columnas = ['Circunscripción', 'Mesa Nº', 'Tipo', 'alcance']
+
+        self.df_alcance_mesa = self.df_distrito[columnas].groupby(['alcance']).sum
 
     def geolocalize(self):
         return
@@ -208,9 +217,9 @@ if __name__ == "__main__":
         '':'',
     }
     for ele in eleccion:
-        mi_mapa=mapa(ele,eleccion[ele],afinidad_concejales)
-        mi_mapa.load_xlsx()
-        mi_mapa.load_csv()
-  #      mi_mapa.get_info()
+        mis_resultados=resultados(ele,eleccion[ele],afinidad_concejales)
+        mis_resultados.load_xlsx()
+        mis_resultados.load_csv()
+        mis_resultados.get_info()
         #mi_mapa.geolocalize()
         #mi_mapa.save()
