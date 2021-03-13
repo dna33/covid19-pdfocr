@@ -11,6 +11,7 @@ class padron:
         self.comuna = comuna
         self.file = ''
         self.url =self.comunas[comuna]
+        self.padron = pd.DataFrame()
 
 
     def load_file(self):
@@ -29,6 +30,7 @@ class padron:
     def get_info(self):
         if os.path.exists(self.comuna+'_padron.csv'):
             print('Tamos ready')
+            self.padron = pd.read_csv(self.comuna+'_padron.csv')
         else:
             doc = fitz.open(self.file)
             padron = []
@@ -86,17 +88,19 @@ class padron:
 
             padron_df = pd.DataFrame(padron)
             padron_df.to_csv(self.comuna+'_padron.csv', index=False)
-
+            self.padron = padron_df
             print('End')
 
 class resultados:
-    def __init__(self,eleccion,url,afinidad):
+    def __init__(self,eleccion,url,afinidad,padron):
         self.eleccion = eleccion
         self.afinidad = afinidad
         self.url = url
         self.file = ''
         self.df_distrito = pd.DataFrame()
         self.df = pd.DataFrame()
+        self.df_alcance_mesa = pd.DataFrame()
+        self.df_padron = padron
 
     def load_xlsx(self):
         print('XLSX processing for ' + self.eleccion)
@@ -160,25 +164,38 @@ class resultados:
             'Votos TRICEL': 'Votos'
         }, inplace=True)
         self.df_distrito['alcance'] = self.df_distrito['Votos']
-
+        self.df_alcance_mesa = pd.DataFrame()
         if self.eleccion == 'Concejales 2016 TER 1':
-            columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
+            self.df_distrito['Mesa'] = self.df_distrito['Mesa Nº'].astype(int).astype(str)+' '+self.df_distrito.Tipo
+            self.df_distrito['Alcance'] = self.df_distrito.groupby(['Mesa'])['alcance'].sum
+            self.df_alcance = pd.merge(self.df_distrito, self.df_padron, on=['Mesa'])
+            self.df_alcance = self.df_alcance['Mesa','Alcance']
+            self.df_alcance.drop_duplicates(inplace=True)
         elif self.eleccion == 'Concejales 2016 TER 2':
-            columnas = ['Circunscripción', 'Mesa Nº', 'Tipo','alcance']
+            self.df_alcance_mesa = self.df_distrito.groupby(['Circunscripción', 'Mesa Nº', 'Tipo'])['alcance'].sum
         elif self.eleccion == 'Diputados 2017':
-            columnas = ['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa','alcance']
+            self.df_alcance_mesa = self.df_distrito.groupby(['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa'])['alcance'].sum
         else:
-            columnas = ['Circ.Electoral', 'Mesa', 'Tipo mesa', 'alcance']
+            self.df_alcance_mesa = self.df_distrito.groupby(['Circ.Electoral', 'Mesa', 'Tipo mesa'])['alcance'].sum
 
-        self.df_alcance_mesa = self.df_distrito[columnas].groupby(['alcance']).sum
+
 
     def geolocalize(self):
-        return
-        #aplicar coordenadas
-        #crear mapa
+        #cruzar mesa y votos
+        print(self.df_alcance_mesa)
 
-    def save(self):
-        return
+        #aplicar coordenadas
+        r = requests.get(self.url, stream=True)
+        print(r.headers['content-length'])
+        if os.path.exists(self.comuna + '_padron.pdf'):
+            self.file = self.comuna + '_padron.pdf'
+        else:
+            with open(self.comuna + '_padron.pdf', 'wb') as fd:
+                for chunk in r.iter_content(int(int(r.headers['content-length']) / 1000)):
+                    fd.write(chunk)
+            self.file = self.comuna + '_padron.pdf'
+
+
 
 if __name__ == "__main__":
     # Procesar el padron actual, para cada eleccion servel cambia url :(
@@ -190,11 +207,13 @@ if __name__ == "__main__":
         'SANTIAGO': 'https://cdn.servel.cl/padron/A13101.pdf',
         'SAN JOAQUIN': 'https://cdn.servel.cl/padron/A13129.pdf'}
     t2 = time.time()
+    padron_d10 = pd.DataFrame()
     for comuna in padron_comunas:
         t0 = time.time()
         my_padron=padron(padron_comunas,comuna)
         my_padron.load_file()
         my_padron.get_info()
+        padron_d10 = padron_d10.append(my_padron.padron,ignore_index=True)
         t1 = time.time()
         print('Time to process padron comuna '+comuna+' ' + str((t1 - t0)/60)+' minutos')
     t3 = time.time()
@@ -217,9 +236,9 @@ if __name__ == "__main__":
         '':'',
     }
     for ele in eleccion:
-        mis_resultados=resultados(ele,eleccion[ele],afinidad_concejales)
+        mis_resultados=resultados(ele,eleccion[ele],afinidad_concejales,padron_d10)
         mis_resultados.load_xlsx()
         mis_resultados.load_csv()
         mis_resultados.get_info()
-        #mi_mapa.geolocalize()
+        mis_resultados.geolocalize()
         #mi_mapa.save()
