@@ -169,20 +169,20 @@ class resultados:
             self.df_distrito['Mesa'] = self.df_distrito['Mesa Nº'].astype(int).astype(str)+' '+self.df_distrito.Tipo
             self.df_distrito['Alcance'] = self.df_distrito.groupby(['Mesa'])['alcance'].sum
             self.df_alcance = pd.merge(self.df_distrito, self.df_padron, on=['Mesa'])
-            self.df_alcance = self.df_alcance['Mesa','Alcance']
-            self.df_alcance.drop_duplicates(inplace=True)
         elif self.eleccion == 'Concejales 2016 TER 2':
-            self.df_alcance_mesa = self.df_distrito.groupby(['Circunscripción', 'Mesa Nº', 'Tipo'])['alcance'].sum
-        elif self.eleccion == 'Diputados 2017':
-            self.df_alcance_mesa = self.df_distrito.groupby(['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa'])['alcance'].sum
-        else:
-            self.df_alcance_mesa = self.df_distrito.groupby(['Circ.Electoral', 'Mesa', 'Tipo mesa'])['alcance'].sum
+            self.df_distrito['Mesa'] = self.df_distrito['Mesa Nº'].astype(int).astype(str) + ' ' + self.df_distrito.Tipo
+            self.df_distrito['Alcance'] = self.df_distrito.groupby(['Mesa'])['alcance'].sum
+            self.df_alcance = pd.merge(self.df_distrito, self.df_padron, on=['Mesa'])
+        # elif self.eleccion == 'Diputados 2017':
+        #     self.df_alcance_mesa = self.df_distrito.groupby(['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa'])['alcance'].sum
+        # else:
+        #     self.df_alcance_mesa = self.df_distrito.groupby(['Circ.Electoral', 'Mesa', 'Tipo mesa'])['alcance'].sum
 
 
 
     def geolocalize(self):
         #cruzar mesa y votos
-        print(self.df_alcance_mesa)
+        print(self.df_alcance,headers=20)
 
         #aplicar coordenadas
         r = requests.get(self.url, stream=True)
