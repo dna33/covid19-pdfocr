@@ -188,23 +188,18 @@ class resultados:
 
     def geolocalize(self):
         #cruzar mesa y votos
-        for direccion in self.df_alcance['Direccion']:
-            r = requests.get('https://localhost:8088/search?'+direccion)
-            lat = {r.latitude:direccion}
-            lon = {r.longitude:direccion}
-            self.df_alcance['lat'] = lat
-            self.df_alcance['lon'] = lon
+        self.df_alcance=pd.concat([self.df_alcance,pd.DataFrame(columns={'lat','lon'})])
+        self.df_alcance.reset_index(drop=True,inplace=True)
+        for i in self.df_alcance.index:
+            direccion = self.df_alcance.loc[i,'Direccion']+' '+self.df_alcance.loc[i,'Circunscripcion']
+            query = 'http://localhost:8088/search.php?q='+direccion+'&city=Santiago'
+            r = requests.get(query)
+            if r.text != "[]":
+                variables = pd.read_json(r.text)
+                self.df_alcance.loc[i,'lat'] = variables.lat.loc[0]
+                self.df_alcance.loc[i,'lon'] = variables.lon.loc[0]
 
-        #aplicar coordenadas
-        r = requests.get(self.url, stream=True)
-        print(r.headers['content-length'])
-        if os.path.exists(self.comuna + '_padron.pdf'):
-            self.file = self.comuna + '_padron.pdf'
-        else:
-            with open(self.comuna + '_padron.pdf', 'wb') as fd:
-                for chunk in r.iter_content(int(int(r.headers['content-length']) / 1000)):
-                    fd.write(chunk)
-            self.file = self.comuna + '_padron.pdf'
+        self.df_alcance.to_csv('alcance_'+self.eleccion+'.csv')
 
 
 
