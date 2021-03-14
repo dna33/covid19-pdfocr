@@ -16,12 +16,9 @@ def read_csv_line(file_path, header=True):
             else:
                 yield line
 
-def convert_address_to_coordinates(address=None, api_key=None):
+def convert_address_to_coordinates(address=None):
     try:
-        api_url = "https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={key}".format(
-                                                                                    address=address,
-                                                                                    key=api_key
-        )
+        api_url = "http://localhost:8088/search.php?street={address}".format(address=address)
         req = requests.get(url=api_url)
         data = json.loads(req.content)
         lat = data['results'][0]['geometry']['location']['lat']
@@ -49,8 +46,7 @@ def write_csv_file(output_file, dict_data, column_names):
 def main(args):
     
     p = Pool(cpu_count())
-    API_KEY = {apikey_gmaps}
-    convert_address = partial(convert_address_to_coordinates , api_key=API_KEY)
+    convert_address = partial(convert_address_to_coordinates)
     direcciones = ["{0}, {1}".format(data[0],data[1]) for data in read_csv_line(args.input_file)]
     
     dict_data = list(tqdm(p.imap(convert_address, direcciones), total=len(direcciones)))
@@ -62,7 +58,7 @@ def main(args):
 
 if __name__ == "__main__":
     #El archivo de input debe ser un csv con las columnas [direccion, comuna]
-    #python get_lat_long_from_direction.py --input_file /Users/maravenag/Downloads/bq-results-20190822-085242-1dy5nktkgrlc.csv --output_file /Users/maravenag/Desktop/props/dirs.csv
+    #python get_lat_long_from_direction.py --input_file ÑUÑOA_padron.csv --output_file nunoa_geocode.csv
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_file', type=str)
     parser.add_argument('--output_file', type=str)
