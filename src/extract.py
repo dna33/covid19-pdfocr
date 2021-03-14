@@ -127,7 +127,6 @@ class resultados:
             t1 = time.time()
             print('Time to process ' + self.file + ' ' + str((t1 - t0) / 60) + ' minutos')
 
-
     def load_csv(self):
         if self.eleccion == 'Presidenciales 2017':
             self.df_distrito = self.df.loc[self.df['Circ.Senatorial'] == '7a Circunscripción']
@@ -152,7 +151,6 @@ class resultados:
             self.candidates.reset_index(drop=True)
             self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
 
-
     def get_info(self):
         # crear probabilidad de voto
         self.df_distrito.rename(columns={
@@ -167,12 +165,20 @@ class resultados:
         self.df_alcance_mesa = pd.DataFrame()
         if self.eleccion == 'Concejales 2016 TER 1':
             self.df_distrito['Mesa'] = self.df_distrito['Mesa Nº'].astype(int).astype(str)+' '+self.df_distrito.Tipo
-            self.df_distrito['Alcance'] = self.df_distrito.groupby(['Mesa'])['alcance'].sum
-            self.df_alcance = pd.merge(self.df_distrito, self.df_padron, on=['Mesa'])
+            alcance = self.df_distrito.groupby(['Mesa'])['alcance'].agg('sum')
+            self.df_padron = self.df_padron[['Direccion','Circunscripcion','Mesa']]
+            t0 = time.time()
+            self.df_alcance = pd.merge(self.df_padron,alcance, on='Mesa')
+            t1 = time.time()
+            print('Time to merge padron with ' + self.eleccion + ' ' + str((t1 - t0) / 60) + ' minutos')
         elif self.eleccion == 'Concejales 2016 TER 2':
             self.df_distrito['Mesa'] = self.df_distrito['Mesa Nº'].astype(int).astype(str) + ' ' + self.df_distrito.Tipo
-            self.df_distrito['Alcance'] = self.df_distrito.groupby(['Mesa'])['alcance'].sum
-            self.df_alcance = pd.merge(self.df_distrito, self.df_padron, on=['Mesa'])
+            alcance = self.df_distrito.groupby(['Mesa'])['alcance'].agg('sum')
+            self.df_padron = self.df_padron[['Direccion', 'Circunscripcion', 'Mesa']]
+            t0 = time.time()
+            self.df_alcance = pd.merge(self.df_padron, alcance, on='Mesa')
+            t1 = time.time()
+            print('Time to merge padron with ' + self.eleccion + ' ' + str((t1 - t0) / 60) + ' minutos')
         # elif self.eleccion == 'Diputados 2017':
         #     self.df_alcance_mesa = self.df_distrito.groupby(['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa'])['alcance'].sum
         # else:
@@ -182,7 +188,12 @@ class resultados:
 
     def geolocalize(self):
         #cruzar mesa y votos
-        print(self.df_alcance,headers=20)
+        for direccion in self.df_alcance['Direccion']:
+            r = requests.get('https://localhost:8088/search?'+direccion)
+            lat = {r.latitude:direccion}
+            lon = {r.longitude:direccion}
+            self.df_alcance['lat'] = lat
+            self.df_alcance['lon'] = lon
 
         #aplicar coordenadas
         r = requests.get(self.url, stream=True)
