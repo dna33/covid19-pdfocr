@@ -6,6 +6,7 @@ import random
 from functools import partial
 from tqdm import tqdm
 from multiprocessing import Pool, cpu_count
+import pandas as pd
 
 def read_csv_line(file_path, header=True):
     with open(file_path) as csv_file:
@@ -18,11 +19,11 @@ def read_csv_line(file_path, header=True):
 
 def convert_address_to_coordinates(address=None):
     try:
-        api_url = "http://localhost:8088/search.php?street={address}".format(address=address)
+        api_url = "http://localhost:8088/search.php?q={address}".format(address=address)
         req = requests.get(url=api_url)
-        data = json.loads(req.content)
-        lat = data['results'][0]['geometry']['location']['lat']
-        lon = data['results'][0]['geometry']['location']['lng']
+        data = data = pd.read_json(req.text)
+        lat = data.lat.loc[0]
+        lon = data.lon.loc[0]
     except Exception as e:
         lat, lon = None, None
 
