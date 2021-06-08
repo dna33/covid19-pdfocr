@@ -161,6 +161,8 @@ class resultados:
             'Votos TER': 'Votos',
             'Votos TRICEL': 'Votos'
         }, inplace=True)
+        ponderado = pd.read_csv('candidates_ponderados.csv')
+        test =  pd.merge(self.df_distrito,ponderado, on='Candidato')
         self.df_distrito['alcance'] = self.df_distrito['Votos']
         self.df_alcance_mesa = pd.DataFrame()
         if self.eleccion == 'Concejales 2016 TER 1':
@@ -183,8 +185,6 @@ class resultados:
         #     self.df_alcance_mesa = self.df_distrito.groupby(['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa'])['alcance'].sum
         # else:
         #     self.df_alcance_mesa = self.df_distrito.groupby(['Circ.Electoral', 'Mesa', 'Tipo mesa'])['alcance'].sum
-
-
 
     def geolocalize(self):
         #cruzar mesa y votos
@@ -246,5 +246,5 @@ if __name__ == "__main__":
         mis_resultados.load_xlsx()
         mis_resultados.load_csv()
         mis_resultados.get_info()
-        mis_resultados.geolocalize()
+        #mis_resultados.geolocalize()
         #mi_mapa.save()
