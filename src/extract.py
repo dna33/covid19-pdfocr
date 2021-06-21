@@ -108,7 +108,7 @@ class resultados:
         print(r.headers['content-length'])
         self.file = self.eleccion + '_resultados.xlsx'
         if os.path.exists(self.file):
-            self.file = self.eleccion + '_resultados_d10.csv'
+            self.file = self.eleccion + '_resultados_d10_d8.csv'
             if os.path.exists(self.file):
                 print('tamos ready')
                 self.df = pd.read_csv(self.file)
@@ -130,22 +130,22 @@ class resultados:
     def load_csv(self):
         if self.eleccion == 'Presidenciales 2017':
             self.df_distrito = self.df.loc[self.df['Circ.Senatorial'] == '7a Circunscripción']
-            self.df_distrito = self.df_distrito.loc[self.df_distrito['Distrito'] == '10° Distrito']
+            self.df_distrito = self.df_distrito.loc[(self.df_distrito['Distrito'] == '10° Distrito') | (self.df_distrito['Distrito'] == '8° Distrito')]
             self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
             self.candidates = self.df_distrito[['Candidato']]
             self.candidates.drop_duplicates(inplace=True)
             self.candidates.reset_index(drop=True)
             self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
         elif self.eleccion == 'Diputados 2017':
-            self.df_distrito = self.df.loc[(self.df['Distrito'] == 10)]
-            self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
+            self.df_distrito = self.df.loc[(self.df['Distrito'] == 10) | (self.df['Distrito'] == 8)]
+            self.df_distrito.to_csv(self.eleccion + '_resultados_d10_d8.csv', index=False)
             self.candidates = self.df_distrito[['Pacto','Partido', 'Candidato']]
             self.candidates.drop_duplicates(inplace=True)
             self.candidates.reset_index(drop=True)
             self.candidates.to_csv(self.eleccion + '_candidates.csv', index=False)
         else:
-            self.df_distrito = self.df.loc[(self.df['Distrito'] == 10)]
-            self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
+            self.df_distrito = self.df.loc[(self.df['Distrito'] == 10) | (self.df['Distrito'] == 8)]
+            self.df_distrito.to_csv(self.eleccion + '_resultados_d10_d8.csv', index=False)
             self.candidates = self.df_distrito[['Pacto', 'Sub Pacto','Partido', 'Candidato']]
             self.candidates.drop_duplicates(inplace=True)
             self.candidates.reset_index(drop=True)
@@ -206,12 +206,13 @@ class resultados:
 if __name__ == "__main__":
     # Procesar el padron actual, para cada eleccion servel cambia url :(
     padron_comunas = {
-        'LA GRANJA': 'https://cdn.servel.cl/padron/A13111.pdf',
-        'ÑUÑOA': 'https://cdn.servel.cl/padron/A13120.pdf',
-        'MACUL': 'https://cdn.servel.cl/padron/A13118.pdf',
+        'MAIPU': 'https://cdn.servel.cl/padron/A13119.pdf',
+        'NUNOA': 'https://cdn.servel.cl/padron/A13120.pdf',
+        'PUDAHUEL': 'https://cdn.servel.cl/padron/A13124.pdf',
         'PROVIDENCIA': 'https://cdn.servel.cl/padron/A13123.pdf',
         'SANTIAGO': 'https://cdn.servel.cl/padron/A13101.pdf',
-        'SAN JOAQUIN': 'https://cdn.servel.cl/padron/A13129.pdf'}
+        'QUILICURA': 'https://cdn.servel.cl/padron/A13125.pdf',
+        'ESTACION_CENTRAL':'https://cdn.servel.cl/padron/A13106.pdf'}
     t2 = time.time()
     padron_d10 = pd.DataFrame()
     for comuna in padron_comunas:

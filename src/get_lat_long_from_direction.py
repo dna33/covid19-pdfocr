@@ -19,9 +19,9 @@ def read_csv_line(file_path, header=True):
 
 def convert_address_to_coordinates(address=None):
     try:
-        api_url = "http://localhost:8088/search.php?q={address}".format(address=address)
+        api_url = "http://localhost:8080/search.php?q={address}".format(address=address)
         req = requests.get(url=api_url)
-        data = data = pd.read_json(req.text)
+        data = pd.read_json(req.text)
         lat = data.lat.loc[0]
         lon = data.lon.loc[0]
     except Exception as e:
@@ -48,7 +48,7 @@ def main(args):
     
     p = Pool(cpu_count())
     convert_address = partial(convert_address_to_coordinates)
-    direcciones = ["{0}, {1}".format(data[0],data[1]) for data in read_csv_line(args.input_file)]
+    direcciones = ["{0}, {1}".format(data[3],"Santiago") for data in read_csv_line(args.input_file)]
     
     dict_data = list(tqdm(p.imap(convert_address, direcciones), total=len(direcciones)))
     p.close()

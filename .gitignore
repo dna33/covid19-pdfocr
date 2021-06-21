@@ -2,3 +2,4 @@ venv-*
 .idea*
 jobs.log
 src/__pycache__
+/venv/

@@ -1,19 +1,23 @@
 import pandas as pd
 df2 = pd.DataFrame()
-for comuna in ['macul','nunoa','providencia','santiago','la_granja','san_joaquin']:
+for comuna in ['maipu','nunoa','pudahuel','estacion_central','providencia','santiago','la_granja','san_joaquin','quilicura','macul']:
     geocode = comuna+'_geocode.csv'
-    comuna = comuna+'.csv'
+    comuna = comuna.upper()+'_padron.csv'
     df1 = pd.read_csv(comuna)
     df0 = pd.read_csv(geocode)
     aux = pd.concat([df0,df1[['Mesa']]],axis=1)
     df2 = df2.append(aux, ignore_index=True)
 df2.comuna.replace({
-    'LaGranja':'LA GRANJA',
-    'SanJoaquin':'SAN JOAQUIN',
-    'Santiago':'SANTIAGO',
-    'Ñuñoa':'ÑUÑOA',
-    'Macul':'MACUL',
-    'Providencia':'PROVIDENCIA'
+    'maipu':'MAIPU',
+    'pudahuel':'PUDAHUEL',
+    'santiago':'SANTIAGO',
+    'nunoa':'NUNOA',
+    'macul':'MACUL',
+    'providencia':'PROVIDENCIA',
+    'quilicura': 'QUILICURA',
+    'estacion_central':'ESTACION_CENTRAL',
+    'la_granja':'LA_GRANJA',
+    'san_joaquin':'SAN_JOAQUIN'
 },inplace=True)
 df3 = pd.read_csv('Concejales 2016 TER 1_resultados_d10.csv')
 df4 = pd.read_csv('Intención de Votos - Concejales.csv',header=None)
