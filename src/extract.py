@@ -131,7 +131,7 @@ class resultados:
         if self.eleccion == 'Presidenciales 2017':
             self.df_distrito = self.df.loc[self.df['Circ.Senatorial'] == '7a Circunscripción']
             self.df_distrito = self.df_distrito.loc[(self.df_distrito['Distrito'] == '10° Distrito') | (self.df_distrito['Distrito'] == '8° Distrito')]
-            self.df_distrito.to_csv(self.eleccion + '_resultados_d10.csv', index=False)
+            self.df_distrito.to_csv(self.eleccion + '_resultados_d10_d8.csv', index=False)
             self.candidates = self.df_distrito[['Candidato']]
             self.candidates.drop_duplicates(inplace=True)
             self.candidates.reset_index(drop=True)
@@ -162,7 +162,7 @@ class resultados:
             'Votos TRICEL': 'Votos'
         }, inplace=True)
         ponderado = pd.read_csv('candidates_ponderados.csv')
-        test =  pd.merge(self.df_distrito,ponderado, on='Candidato')
+        test = pd.merge(self.df_distrito,ponderado, on='Candidato')
         self.df_distrito['alcance'] = self.df_distrito['Votos']
         self.df_alcance_mesa = pd.DataFrame()
         if self.eleccion == 'Concejales 2016 TER 1':
@@ -183,8 +183,14 @@ class resultados:
             print('Time to merge padron with ' + self.eleccion + ' ' + str((t1 - t0) / 60) + ' minutos')
         # elif self.eleccion == 'Diputados 2017':
         #     self.df_alcance_mesa = self.df_distrito.groupby(['Circ. Electoral', 'Nro. Mesa', 'Tipo Mesa'])['alcance'].sum
-        # else:
-        #     self.df_alcance_mesa = self.df_distrito.groupby(['Circ.Electoral', 'Mesa', 'Tipo mesa'])['alcance'].sum
+        else:
+            alcance = self.df_distrito.groupby(['Mesa Fusionada'])['alcance'].agg('sum')
+            self.df_padron = self.df_padron[['Direccion', 'Circunscripcion', 'Mesa Fucionada']]
+            t0 = time.time()
+            self.df_alcance = pd.merge(self.df_padron, alcance, on='Mesa')
+            t1 = time.time()
+            print('Time to merge padron with ' + self.eleccion + ' ' + str((t1 - t0) / 60) + ' minutos')
+
 
     def geolocalize(self):
         #cruzar mesa y votos
